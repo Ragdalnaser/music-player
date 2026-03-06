@@ -1,4 +1,4 @@
-/* DIVs 2D rectangles
+/* DIVs 2D rectangles test
 */
 //
 println(displayWidth, displayHeight);
