@@ -21,7 +21,10 @@ float playSymbolDivY4 = DivY +  DivHeight*1/2;
 float playSymbolDivX5 = DivX + DivWidth*1/4;
 float playSymbolDivY6 = DivY +  DivHeight*3/4;
 
-
+float startbuttonDivX = DivX + DivWidth *
+float startbuttonDivY = DivY + Divheight *
+float startbuttonDivWidth = DivWidth + DivWidth
+float startbuttonDivHeight = DivHeight + DivHeight
 
 
 //rect( DivX, DivY, DivWidth, DivHeight);
