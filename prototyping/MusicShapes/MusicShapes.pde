@@ -26,3 +26,4 @@ float playSymbolDivY6 = DivY +  DivHeight*3/4;
 
 //rect( DivX, DivY, DivWidth, DivHeight);
 triangle( playSymbolDivX1,playSymbolDivY2, playSymbolDivX3, playSymbolDivY4,playSymbolDivX5, playSymbolDivY6 );
+rect(  startbuttonDivX, startbutttonDivY, startbuttonDivHeight, startbuttonDivWidth);
