@@ -11,22 +11,22 @@ float paperHeight = 13.0 ;
 
 float DivX= appWidth *1/4;
 float DivY=  appHeight * 1/4 ;
-float DivWidth= appWidth*3/4 ;
-float DivHeight = appHeight*3/4; 
+float DivWidth= appWidth*1/2 ;
+float DivHeight = appHeight*1/2; 
 
 float playSymbolDivX1 = DivX + DivWidth*1/4;
 float playSymbolDivY2 = DivY +  DivHeight*1/4;
 float playSymbolDivX3 = DivX + DivWidth*3/4;
-float playSymbolDivY4 = DivY +  DivHeight*1/2;
+float playSymbolDivY4 = DivY +  DivHeight* 1/2;
 float playSymbolDivX5 = DivX + DivWidth*1/4;
 float playSymbolDivY6 = DivY +  DivHeight*3/4;
 
-float startbuttonDivX = DivX + DivWidth *
-float startbuttonDivY = DivY + Divheight *
-float startbuttonDivWidth = DivWidth + DivWidth
-float startbuttonDivHeight = DivHeight + DivHeight
+float startsymbolDivX = DivX + DivWidth * 1/4;
+float startsymbolDivY = DivY + DivHeight * 1/4;
+float startsymbolDivWidth = DivWidth * 1/2;
+float startsymbolDivHeight = DivHeight * 1/2;
 
 
-//rect( DivX, DivY, DivWidth, DivHeight);
+rect( DivX, DivY, DivWidth, DivHeight);
 triangle( playSymbolDivX1,playSymbolDivY2, playSymbolDivX3, playSymbolDivY4,playSymbolDivX5, playSymbolDivY6 );
-rect(  startbuttonDivX, startbutttonDivY, startbuttonDivHeight, startbuttonDivWidth);
+//rect( startsymbolDivX, startsymbolDivY, startsymbolDivWidth, startsymbolDivHeight );
