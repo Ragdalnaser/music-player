@@ -55,10 +55,6 @@ float MusicbuttonDivY5 = appHeight * 11.5 / paperHeight;
 float MusicbuttonDivWidth5 = appWidth * 1 / paperWidth;
 float MusicbuttonDivHeight5 = appHeight * 0.8 / paperHeight;
 
-float MusicbuttonDivX6 = appWidth  * 6.5 / paperWidth;
-float MusicbuttonDivY6 = appHeight * 11.5 / paperHeight; 
-float MusicbuttonDivWidth6 = appWidth * 1 / paperWidth;
-float MusicbuttonDivHeight6 = appHeight * 0.8 / paperHeight;
 
 //rect( DivX, DivY, DivWidth, DivHeight);
 rect(songTitleDivX,songTitleDivY, songTitleDivWidth, songTitleDivHeight);
@@ -70,4 +66,3 @@ rect(MusicbuttonDivX2, MusicbuttonDivY2, MusicbuttonDivWidth2, MusicbuttonDivHei
 rect(MusicbuttonDivX3, MusicbuttonDivY3, MusicbuttonDivWidth3, MusicbuttonDivHeight3);
 rect(MusicbuttonDivX4, MusicbuttonDivY4, MusicbuttonDivWidth4, MusicbuttonDivHeight4);
 rect(MusicbuttonDivX5, MusicbuttonDivY5, MusicbuttonDivWidth5, MusicbuttonDivHeight5);
-rect(MusicbuttonDivX6, MusicbuttonDivY6, MusicbuttonDivWidth6, MusicbuttonDivHeight6);
