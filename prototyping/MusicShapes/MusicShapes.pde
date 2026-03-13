@@ -26,24 +26,27 @@ float startsymbolDivY = DivY + DivHeight * 1/4;
 float startsymbolDivWidth = DivWidth * 1/2;
 float startsymbolDivHeight = DivHeight * 1/2;
 
-float skipsymbolDivX = DivX + DivWidth * 1/4 ;
-float skipsymbolDivY = DivY + DivHeight * 1/4 ;
-float skipsymbolDivWidth = DivWidth * 3/4 ;
-float skipsymbolDivHeight = DivHeight  * 3/4  ;
+float skipsymbolDivX1 = DivX + DivWidth * 1/4 ;
+float skipsymbolDivY2 = DivY + DivHeight * 3/8 ;
+float skipsymbolDivX3 = DivWidth * 3/4 ;
+float skipsymbolDivY4 = DivHeight  * 1/2  ;
+float skipsymbolDivX5 = DivX + DivWidth *;
+float skipsymbolDivY6 = DiivY + DivHeight
 
-float stopsymbolDivX = DivX + DivWidth *  ;
-float stopsymbolDivY = DivY + DivHeight * ;
-float stopsymbolDivWidth = DivWidth * ;
-float stopsymolDivHeight = Divheight *  ;
 
-float mutesymbolDivX = Divx +DivWidth * ;
-float  mutesymbolDivY = DivY + DivHeight *;
-float  mutesymbolDivWidth = DivWidth * ;
-float mutesymbolDivHeight = DivHeight *;
+float stopsymbolDivX = DivX + DivWidth * 1/4  ;
+float stopsymbolDivY = DivY + DivHeight *1/4 ;
+float stopsymbolDivWidth = DivWidth *1/2 ;
+float stopsymolDivHeight = DivHeight * 1/2 ;
+
+float mutesymbolDivX = DivX +DivWidth * 3/8 ;
+float  mutesymbolDivY = DivY + DivHeight * 1/4 ;
+float  mutesymbolDivWidth = DivWidth * 1/2 ;
+float mutesymbolDivHeight = DivHeight *1/2;
 
 //rect(DivX, DivY, DivWidth, DivHeight);
 //triangle( playSymbolDivX1,playSymbolDivY2, playSymbolDivX3, playSymbolDivY4,playSymbolDivX5, playSymbolDivY6 );
 //rect( startsymbolDivX, startsymbolDivY, startsymbolDivWidth, startsymbolDivHeight );
-rect/triangle( skipsymbolDivX, skipsymbolDivY, skipsymbolDivWidth, skipsymbolDivHeight);
-rect/triangle( stopsymbolDivX, stopsymbolDivY, stopsymbolivWidth, stopsymbolDivHeight);
+circle(skipsymbolDivX1, skipsymbolDivY2, skipsymbolDivX3, skipsymbolDivY4, skipsymbolDivX5, skipsymbolDivY6,skipsymbolDivX1, skipsymbolDivY2, skipsymbolDivX3, skipsymbolDivY4, skipsymbolDivX5, skipsymbolDivY6 skipsymbolDivWidth, skipsymbolDivHeight);
+triangle( stopsymbolDivX1, stopsymbolDivY2, stopsymbolDivX3,stopsymbolDivY4, stopsymbolDivX5, stopsybolDivY6, stopsymbolivWidth, stopsymbolDivHeight);
 circle( mutesymbolDivX, mutesymbolDivY, mutesymbolDivWidth, mutesymbolDivHeight);
