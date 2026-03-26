@@ -30,8 +30,8 @@ PImage image1 = loadImage( pathway1 );
 //PImage image3 = loadImage( pathway3);
 //
 //image(image1, 0, 0);
-int imageWidth2 = 500;
-int imageHeight2 = 860;
+int imageWidth1 = 500;
+int imageHeight1 = 711;
 //
 // Population:Divs
  int numberOfButtons = 13; // Half a button on either side as space, centre button is Play
