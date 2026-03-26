@@ -1,4 +1,4 @@
-/* DIVs 2D rectangles
+/* Divs 2D rectangles;
 */
 //
 println(displayWidth, displayHeight);
@@ -39,15 +39,18 @@ float stopsymbolDivX = DivX + DivWidth * 1/4  ;
 float stopsymbolDivY = DivY + DivHeight *1/4 ;
 float stopsymbolDivWidth = DivWidth *1/2 ;
 float stopsymolDivHeight = DivHeight * 1/2 ;
+float stopsymbolDivX = DivX + DivWidth* 1/4;
+float stopsymbolDivY = DivY + DivHeight * 1/2;
+
 
 float mutesymbolDivX = DivX +DivWidth * 3/8 ;
-float  mutesymbolDivY = DivY + DivHeight * 1/4 ;
-float  mutesymbolDivWidth = DivWidth * 1/2 ;
+float mutesymbolDivY = DivY + DivHeight * 1/4 ;
+float mutesymbolDivWidth = DivWidth * 1/2 ;
 float mutesymbolDivHeight = DivHeight *1/2;
 
 //rect(DivX, DivY, DivWidth, DivHeight);
 //triangle( playSymbolDivX1,playSymbolDivY2, playSymbolDivX3, playSymbolDivY4,playSymbolDivX5, playSymbolDivY6 );
 //rect( startsymbolDivX, startsymbolDivY, startsymbolDivWidth, startsymbolDivHeight );
-//circle(x, y, diameter);skipsymbolDivX1, skipsymbolDivY2, skipsymbolDivX3, skipsymbolDivY4, skipsymbolDivX5, skipsymbolDivpsymbolDivX5, skipsymbolDivY6 skipsymbolDivWidth, skipsymbolDivHeight);
-triangle(stopsymbolDivX1, stopsymbolDivY2, stopsymbolDivX3,stopsymbolDivY4, stopsymbolDivX5, stopsybolDivY6, stopsymbolivWidth, stopsymbolDivHeight);
-circle( mutesymbolDivX, mutesymbolDivY, mutesymbolDivWidth, mutesymbolDivHeight);
+circle(x, y, diameter);skipsymbolDivX1, skipsymbolDivY2, skipsymbolDivX3, skipsymbolDivY4, skipsymbolDivX5, skipsymbolDivY, skipsymbolDivWidth,skipsymbolDivHeight
+//triangle(stopsymbolDivX1, stopsymbolDivY2, stopsymbolDivX3,stopsymbolDivY4, stopsymbolDivX5, stopsybolDivY6, stopsymbolivWidth, stopsymbolDivHeight);
+//circle( mutesymbolDivX, mutesymbolDivY, mutesymbolDivWidth, mutesymbolDivHeight
