@@ -30,12 +30,12 @@ float startsymbolDivHeight = DivHeight * 1/2;
 
 
 
-float stopsymbolDivX1 = DivX + DivWidth * 1/4  ;
-float stopsymbolDivY2 = DivY + DivHeight *1/4 ;
-float stopsymbolDivX3 = DivX + DivWidth * 3/4;
-float stopsymbolDivY4 = DivY + DivHeight * 1/4;
-float stopsymbolDivX5 = DivX + DivWidth * 3/4;
-float stopsymbolDivY6 = DivY + DivHeight * 1/4;
+float stopsymbolDivX1 = DivX + DivWidth * 1/6 ;
+float stopsymbolDivY2 = DivY + DivHeight *1/6 ;
+float stopsymbolDivX3 = DivX + DivWidth * 1/2;
+float stopsymbolDivY4 = DivY + DivHeight* 1/6;
+float stopsymbolDivX5 = DivX + DivWidth*1/2;
+float stopsymbolDivY6 = DivY + DivHeight* 1/6;
 
 
 
@@ -44,8 +44,15 @@ float mutesymbolDivY = DivY + DivHeight * 1/2 ;
 float mutesymbolDivWidth = DivWidth   ;
 float mutesymbolDivHeight = DivHeight ;
 
+
+float recordsymbolDivX = DivX + DivWidth* 1/2;
+float recordsymbolDivY = DivY + DivHeight * 1/2;
+float recordsymbolDivWidth = DivWidth  ;
+float recordsymbolDivHeight = DivHeight  ;
+
 rect(DivX, DivY, DivWidth, DivHeight);
 //triangle( playSymbolDivX1,playSymbolDivY2, playSymbolDivX3, playSymbolDivY4,playSymbolDivX5, playSymbolDivY6 );
 //rect( startsymbolDivX, startsymbolDivY, startsymbolDivWidth, startsymbolDivHeight );
-traingle(stopsymbolDivX1, stopsymbolDivY2, stopsymbolDivX3, stopsymbolDivY4 ,stopsymbolDivX5, stopsymbolDivY6);
+triangle(stopsymbolDivX1, stopsymbolDivY2, stopsymbolDivX3, stopsymbolDivY4 ,stopsymbolDivX5, stopsymbolDivY6);
 ellipse( mutesymbolDivX, mutesymbolDivY, mutesymbolDivWidth, mutesymbolDivHeight);
+Circle( recordsymbolDivX, recordsymbolDivY, recordsymbolDivWidth, recordsymbolDivHeight);
