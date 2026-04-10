@@ -8,8 +8,9 @@ int appWidth = displayWidth;
 int appHeight = displayHeight;
 //
 String upArow = "..";
+String musicplayerFolder = "music-player";
 String dependenciesFolder = "dependencies/";
-String ImagesFolder = "Images/"; 
+String ImageFolder = "Images/"; 
 String ImageName1 = "Taylor_Swift_at_the_2023_MTV_Video_Music_Awards_(3)";
 //String ImageFolder2 = "Clock";
 //String ImageFolder = "Table";
@@ -19,10 +20,9 @@ String open = "/";
 //concatenation
 // Note, Cut out, See Absolute pathway;
 // See Relative pathway; C:\Users\Student\Documents\GitHub\music-player\dependencies
-String imageDirectory = upArow + open + upArow + open + dependenciesFolder + open + ImagesFolder + ImageName1;
-println( imageDirectory);
-//println ( pathway);
+String imageDirectory = upArow + open + upArow + open  + musicplayerFolder + open + dependenciesFolder + open + ImageFolder + open ;
 String Pathway1 = imageDirectory = ImageName1 + fileExtension;
+//println ( pathway);
 //String Pathway2 = ImageDircetory =  imageName2 + filExtension;
 //String Pathway3 = ImageDirectory = ImageName3 + fileExtension;
 //println ( pathway);
@@ -36,7 +36,7 @@ int imageWidth1 = 500;
 int imageHeight1 = 711;
 //
 // Population:Divs
- int numberOfButtons = 13; // Half a button on either side as space, centre button is Play
+ int numberOfButtons = 5; // Half a button on either side as space, centre button is Play
  int widthOfButtons = appWidth/numberOfButtons;
  int beginningButtonSpace = widthOfButtons;
  float imageDivX = beginningButtonSpace;
@@ -53,7 +53,7 @@ float imageWidthAdjusted1 = imageDivWidth;
 println( "Comparison of imageHeight1 and divHeight:", imageHeight1, imageDivHeight);
 float imageHeightAdjusted1 = ( imageWidth1  >= imageDivWidth ) ? imageWidthAdjusted1 / image1AspectRation_GreatOne : imageWidthAdjusted1 *  image1AspectRation_GreatOne;
 println("imageHeightAdjusted1", imageHeightAdjusted1);
-println("Question: is this is too big?","\t\thint ... reposition image() above rect(div)"  );
+println("Question: is this is too big?","\t\thint ... reposition image() above rect(div)");
 // While LOOP: decrease imageWidth to decrease the caculated imageHeight(% decrease within multiplication assignment operator
 while (imageHeightAdjusted1 > imageDivHeight ) {
   imageWidthAdjusted1*= 0.99;
