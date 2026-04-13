@@ -14,7 +14,7 @@ String ImageFolder = "Images/";
 String ImageName1 = "Taylor_Swift_at_the_2023_MTV_Video_Music_Awards_(3)";
 //String ImageFolder2 = "Clock";
 //String ImageFolder = "Table";
-String fileExtension = ".Png";
+String fileExtension = ".png";
 String open = "/";
 //
 //concatenation
