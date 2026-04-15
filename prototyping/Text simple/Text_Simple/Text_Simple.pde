@@ -1,5 +1,5 @@
-/* Text, Simple ... Hardcoded
- */
+/* Text, Simple ... Hardcoded;
+*/
 //
 // Display
 fullScreen();
@@ -18,15 +18,17 @@ float songTitleDivX = beginningButtonSpace;
 float songTitleDivY= appHeight* 1.5;
 float songTitleDivWidth = appWidth * 6  - beginningButtonSpace* 1.5;
 float songTitleDivHeight = appHeight * 1;
-
-
-
+float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
+float messageDIV_Y = appHeight*1.5/20;
+float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
+float messageDIV_Height = appHeight*9/20;
 
 
 //
 // DIVs: Image
 rect(quitDivx, quitDivY, quitDivWidth, quitDivHeight);
 rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
 
 //
 //Strings, Text, Literal
@@ -39,21 +41,20 @@ String Title = " Thunder";
  - OR full string is not drawn
  */
  
- //
- // Fonts from OS
+ /* Fonts from OS
  println ("start of Cansole");// ERROR: in case CONSOLE Memory not enough;
- PFont fontHarrington; //Font Varaible Name, able to have more than one Font
+ String[] fontlist = PFont.List(); // TO list all fonts to choose, then createFont
  printlnArray( fontlist );// For listing all possible fonts to choose , then createfont
- //Spelling counts and  and must comapare CONSOLE v Tools / create  font Spelling
+ //Spelling counts and  and must comapare CONSOLE v Tools / create Font / create  font Spelling
  //Tools / create Font / find  font / Do Not press "OK", known  conflict  between LoadFont() and createFont()
- //
- // students  enter all the text from the case study;
+ */
+ // students  enter all the text from the case study
  //
  // Fonts from OS
- float fontSize1 = appHeight;// Entire program , algorithm  to have smallest font size
+ float fontSize1 = appHeight;// Entire program , algorithm to have smallest font size
  println (fontSize);
  PFont font ;// Font varible  Name, able  to have more  than one Font
- String  Harrigton = "Harrigton";// Spelling  of the Font  Matters,  see PFont, list() v Create Font  above
+ String  harrigton = "Harrigton";// Spelling  of the Font  Matters,  see PFont, list() v Create Font  above
  font = createFont( harrigton,  fontSize);
  //
  // Aspect  Ratio for harrigton
@@ -67,21 +68,20 @@ fontSize1 = songTitleDivHeight* harrigtonAspectRatio* textAdjustment;
  
  //
  // Drawing Test
- color redInk = #208FF; // AP mMinilesson  in bit , 8-bit or byte ( gray scale 255
- 
+ color RedInk = ##E82A2A; // AP mMinilesson  in bit , 8-bit or byte ( gray scale 255
  color whiteInk= # FFFFFF; // grey scale is 255
  color  resetInk  = whiteInk;
  fill(RedInk);// Ink  Hexidecimal copied from the color selector
  // Grey  scale 0-255
- TextAlign( CENTER, CENTER);// Align, X&Y, See processing. org / reference
-// Values:[ LEFT|CENTRE|Right]& [Top|CENTER| BUTTOM| BASELINE]
+ textFont(font, fontSize);
+ text( title, songTitleDivX, songTitleDivY, songTitleWidth, songTilteDivHeight);
+ TextAlign( CENTER, Baseline);// Align, X&Y, See processing. org / reference
+// Values:[ LEFT|CENTRE|Right]& [Top|CENTER| BUTTOM| BASELINE];
  TextFont( fontSize1); // must include TextSize ()
  TextFont( fontSize2); // must include TextSize ()
-
- 
- Text( title, songTitleDivX, songTitleDivY, songTitleWidth, songTilteDivHeight);
- Text(title,quitX, quitY, qiutDivWidth, quitDivHeight);
- 
- 
- fill( resetInk);
+fill( resetInk)
+ //
+// Text( title, songTitleDivX, songTitleDivY, songTitleWidth, songTilteDivHeight);
+// Text(title,quitX, quitY, qiutDivWidth, quitDivHeight);
+Text(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
  //
