@@ -10,14 +10,14 @@ int appHeight = displayHeight;
 int numberOfButtons = 5;  // Half a button on either side as space, centre button is Play
 int widthOfButtons = appWidth/numberOfButtons;
 int beginningButtonSpace = widthOfButton;
-float quitX = appWidth - appHeight* 0.5;
+float quitX = appWidth - appHeight* 0.5/20;
 float quitY = 0;
-float quitWidth = appHeight* 0.5;
-float quitHeight = appHeight* 0.5;
+float quitWidth = appHeight* 0.5/20;
+float quitHeight = appHeight* 0.5/20;
 float songTitleDivX = beginningButtonSpace;
-float songTitleDivY= appHeight* 1.5;
-float songTitleDivWidth = appWidth * 6  - beginningButtonSpace* 1.5;
-float songTitleDivHeight = appHeight * 1;
+float songTitleDivY= appHeight* 1.5/20;
+float songTitleDivWidth = appWidth * 6  - beginningButtonSpace* 1.5/20;
+float songTitleDivHeight = appHeight * 1/10
 float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
 float messageDIV_Y = appHeight*1.5/20;
 float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
@@ -26,7 +26,7 @@ float messageDIV_Height = appHeight*9/20;
 
 //
 // DIVs: Image
-rect(quitDivx, quitDivY, quitDivWidth, quitDivHeight);
+rect(quitX, quitY, quitWidth, quitHeight);
 rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
 rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
 
@@ -77,11 +77,9 @@ fontSize1 = songTitleDivHeight* harrigtonAspectRatio* textAdjustment;
  text( title, songTitleDivX, songTitleDivY, songTitleWidth, songTilteDivHeight);
  TextAlign( CENTER, Baseline);// Align, X&Y, See processing. org / reference
 // Values:[ LEFT|CENTRE|Right]& [Top|CENTER| BUTTOM| BASELINE];
- TextFont( fontSize1); // must include TextSize ()
- TextFont( fontSize2); // must include TextSize ()
-fill( resetInk)
- //
-// Text( title, songTitleDivX, songTitleDivY, songTitleWidth, songTilteDivHeight);
-// Text(title,quitX, quitY, qiutDivWidth, quitDivHeight);
-Text(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
- //
+textFont(font, fontSize); //must include textSize() before text() & textWidth()
+text( title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+text( title, quitX, quitY, quitWidth, quitHeight );
+text( title, messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
+fill(resetInk);
+//
