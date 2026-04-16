@@ -1,5 +1,5 @@
 /* Text, Simple ... Hardcoded;
-*/
+ */
 //
 //
 // Display
@@ -23,14 +23,11 @@ float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
 float messageDIV_Y = appHeight*1.5/20;
 float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
 float messageDIV_Height = appHeight*9/20;
-
-
 //
 // DIVs: Image
 rect(quitX, quitY, quitWidth, quitHeight);
 rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
 rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
-
 //
 //Strings, Text, Literal
 String Title = " Thunder";
@@ -41,48 +38,88 @@ String Title = " Thunder";
  - if font is too big, wrap around happens
  - OR full string is not drawn
  */
- 
- /* Fonts from OS
+
+/* Fonts from OS
  println ("start of Cansole");// ERROR: in case CONSOLE Memory not enough;
  String[] fontlist = PFont.List(); // TO list all fonts to choose, then createFont
  printlnArray( fontlist );// For listing all possible fonts to choose , then createfont
  //Spelling counts and  and must comapare CONSOLE v Tools / create Font / create  font Spelling
  //Tools / create Font / find  font / Do Not press "OK", known  conflict  between LoadFont() and createFont()
  */
- // students  enter all the text from the case study
- //
- // Fonts from OS
+// students  enter all the text from the case study
+//
+// Fonts from OS
 float fontSize1 = appHeight; //Entire Program, Algorithm to have smallest font size
 float fontSize2 = appHeight; //Entire Program, Algorithm to have smallest font size
 float fontSize3 = appHeight; //Entire Program, Algorithm to have smallest font size
 //println( fontSize );
-PFont font; //Font Varaible Name, able to have more than one Font
+PFont font; //font Varaible Name, able to have more than one Font
 String harrington = "Harrington"; //Spelling of the Font Matters, see PFont.list() v Create Font above
 font = createFont(harrington, fontSize1);
 
- // Aspect  Ratio for harrigton
- float FontSizeharrigton = 83; // Default  Fontize  for -100%
- float DivHeightHarrigton  = songTitleDivWidth;// key value, value = 6 
- float harrigtonAspectRatio = fontSize1 / DivHeightHarrigton;// #<1;
- float TextAdjustment = 0.9;
-fontSize1 = songTitleDivHeight* harrigtonAspectRatio* TextAdjustment;
-//fontSize2 = songTitleDivHeight* harrigtonAspectRatio* textAdjustment;
+// Aspect  Ratio for harrington
+float FontSizeharrington = 83; // Default  Fontize  for -100%
+float DivHeightHarrington  = songTitleDivWidth;// key value, value = 6
+float harringtonAspectRatio = fontSize1 / DivHeightHarrington;// #<1;
+float textAdjustment = 0.9;
+fontSize1 = songTitleDivHeight*harringtonAspectRatio * textAdjustment;
+fontSize2 = messageDIV_Height*harringtonAspectRatio * textAdjustment;
+fontSize3 = quitHeight*harringtonAspectRatio * textAdjustment;
 //println (fontSize);
- 
- //
- // Drawing Test
- color RedInk = #E82A2A; // AP Minilesson  in bit , 8-bit or byte ( gray scale 255
- color whiteInk=   #FFFFFF; // grey scale is 255
- color  resetInk  = whiteInk;
- fill(RedInk);// Ink  Hexidecimal copied from the color selector
- // Grey  scale 0-255
- TextFont(font, fontSize1);
- Text( title, songTitleDivX, songTitleDivY, songTitleWidth, songTilteDivHeight);
- TextAlign( CENTER, Baseline);// Align, X&Y, See processing. org / reference
+
+//
+// Drawing Test
+color RedInk = #E82A2A; // AP Minilesson  in bit , 8-bit or byte ( gray scale 255
+color whiteInk=   #FFFFFF; // grey scale is 255
+color  resetInk  = whiteInk;
+fill(RedInk);// Ink  Hexidecimal copied from the color selector
+// Grey scale 0-255
+textFont(font, fontSize1);
+text( Title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+textAlign( CENTER, BASELINE);// Align, X&Y, See processing. org / reference
 // Values:[ LEFT|CENTRE|Right]& [Top|CENTER| BUTTOM| BASELINE];
-TextFont(font, fontSize); //must include textSize() before text() & textWidth()
-text( title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
-text( title, quitX, quitY, quitWidth, quitHeight );
-text( title, messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
+textFont(font, fontSize1); //must include textSize() before text() & textWidth()
+//Note: drawing text after height dimension solved
+//WHILE solves length dimension
+//Additional docing required to adjust consistent text size for meaning in app
+float constantDecrease = 0.99;
+int iWhile=0;
+while (textWidth(Title) > songTitleDivWidth) {
+  //println("While #1"); //Demon Infinite LOOP
+  iWhile++;
+  if ( iWhile>1000 ) {
+    println("Infninte WHILE Loop");
+    exit();
+  }
+  fontSize1 *= constantDecrease;
+  textFont(font, fontSize1);
+}
+text( Title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+textFont(font, fontSize2); //must include textSize() before text() & textWidth()
+iWhile=0;
+while (textWidth(Title) > messageDIV_Width) {
+  //println("While #1"); //Demon Infinite LOOP
+  iWhile++;
+  if ( iWhile>1000 ) {
+    println("Infninte WHILE Loop");
+    exit();
+  }
+  fontSize2 *= constantDecrease;
+  textFont(font, fontSize2);
+}
+text( Title, messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
+textFont(font, fontSize3); //must include textSize() before text() & textWidth()
+iWhile=0;
+while (textWidth(Title) > quitWidth) {
+  //println("While #1"); //Demon Infinite LOOP
+  iWhile++;
+  if ( iWhile>1000 ) {
+    println("Infninte WHILE Loop");
+    exit();
+  }
+  fontSize3 *= constantDecrease;
+  textFont(font, fontSize3);
+}
+text( Title, quitX, quitY, quitWidth, quitHeight );
 fill(resetInk);
 //
