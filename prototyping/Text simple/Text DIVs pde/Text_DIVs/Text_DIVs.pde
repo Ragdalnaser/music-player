@@ -8,26 +8,23 @@ int appWidth = displayWidth;
 int appHeight = displayHeight;
 //
 // Population: DIVs
-int numberOfButtons = 5;  // Half a button on either side as space, centre button is Play
-int widthOfButton = appWidth/numberOfButtons;
-int beginningButtonSpace = widthOfButton;
-float quitX = appWidth - appHeight*0.5/20;
-float quitY = 0;
-float quitWidth = appHeight* 0.5/20;
-float quitHeight = appHeight* 0.5/20;
-float songTitleDivX = beginningButtonSpace;
-float songTitleDivY= appHeight* 1.5/20;
-float songTitleDivWidth = appWidth * 6  - beginningButtonSpace* 1.5/20;
-float songTitleDivHeight = appHeight * 1/10;
-float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
-float messageDIV_Y = appHeight*1.5/20;
-float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
-float messageDIV_Height = appHeight*9/20;
 //
-// DIVs: Image
-rect(quitX, quitY, quitWidth, quitHeight);
-rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
+float paperWidth = 11.0;
+float paperHeight = 13.0 ;
+//
+float songTitleDivX= appWidth * 1.5 / paperWidth ;
+float songTitleDivY= appHeight * 1.5 / paperHeight ;
+float songTitleDivWidth = appWidth * 6 / paperWidth ;
+float songTitleDivHeight = appHeight * 1 / paperHeight ; 
+float QuickbuttonDivX = appWidth * 0.0  / paperWidth ;
+float QuickbuttonDivY = appHeight  * 0.0 / paperHeight ;
+float QuickbuttonDivWidth = appWidth  * 0.5  / paperWidth ;
+float QuickbuttonDivHeight = appHeight * 0.4 / paperWidth
+//
+// DIVs
+rect(songTitleDivX,songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
+rect( messageDivX, messageDivY, messageDivWidth, messageDivHeigth);
 //
 //Strings, Text, Literal
 String Title = " Thunder";
@@ -46,6 +43,10 @@ String Title = " Thunder";
  //Spelling counts and  and must comapare CONSOLE v Tools / create Font / create  font Spelling
  //Tools / create Font / find  font / Do Not press "OK", known  conflict  between LoadFont() and createFont()
  */
+
+
+
+
 // students  enter all the text from the case study
 //
 // Fonts from OS
@@ -59,7 +60,7 @@ font = createFont(harrington, fontSize1);
 
 // Aspect  Ratio for harrington
 float FontSizeharrington = 83; // Default  Fontize  for -100%
-float DivHeightHarrington  = songTitleDivWidth;// key value, value = 6
+float DivHeightHarrington  = songTitleDivHeight ; // key value, value = 6;
 float harringtonAspectRatio = fontSize1 / DivHeightHarrington;// #<1;
 float textAdjustment = 0.9;
 fontSize1 = songTitleDivHeight*harringtonAspectRatio * textAdjustment;
