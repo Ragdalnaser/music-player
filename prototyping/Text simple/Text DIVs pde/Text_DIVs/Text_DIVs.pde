@@ -12,14 +12,18 @@ int appHeight = displayHeight;
 float paperWidth = 11.0;
 float paperHeight = 13.0 ;
 //
-float songTitleDivX= appWidth * 1.5 / paperWidth ;
+float songTitleDivX= appWidth * 1.5 ;
 float songTitleDivY= appHeight * 1.5 / paperHeight ;
 float songTitleDivWidth = appWidth * 6 / paperWidth ;
 float songTitleDivHeight = appHeight * 1 / paperHeight ; 
-float QuickbuttonDivX = appWidth * 0.0  / paperWidth ;
+float QuickbuttonDivX = appWidth * 0.0 ;
 float QuickbuttonDivY = appHeight  * 0.0 / paperHeight ;
 float QuickbuttonDivWidth = appWidth  * 0.5  / paperWidth ;
-float QuickbuttonDivHeight = appHeight * 0.4 / paperWidth
+float QuickbuttonDivHeight = appHeight * 0.4 / paperWidth;
+float messageDivX = appWidth *
+float messageDivY = appHeight *;
+float messageDivWidth = appWidth *;
+float messageDivHeight = appHeight *;
 //
 // DIVs
 rect(songTitleDivX,songTitleDivY, songTitleDivWidth, songTitleDivHeight);
