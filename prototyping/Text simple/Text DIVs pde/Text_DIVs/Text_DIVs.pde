@@ -14,6 +14,7 @@ float paperHeight = 13.0 ;
 //
 float songTitleDivX= appWidth * 1.5 ;
 float songTitleDivY= appHeight * 1.5 / paperHeight ;
+
 float songTitleDivWidth = appWidth * 6 / paperWidth ;
 float songTitleDivHeight = appHeight * 1 / paperHeight ; 
 float QuickbuttonDivX = appWidth * 0.0 ;
