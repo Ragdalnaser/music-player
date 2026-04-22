@@ -8,7 +8,6 @@ int appWidth = displayWidth;
 int appHeight = displayHeight;
 //
 // Population: DIVs
-//Population: DIVs
 int numberOfButtons = 13; //Half a button on either side as space, Center Button is Play
 int widthOfButton = appWidth/numberOfButtons;
 int beginningButtonSpace = widthOfButton;
@@ -93,6 +92,7 @@ textFont(font, fontSize1); //must include textSize() before text() & textWidth()
 //Additional docing required to adjust consistent text size for meaning in app
 float constantDecrease = 0.99;
 int iWhile=0;
+textAlign (CENTER, CENTER);
 while (textWidth(Title) > songTitleDivWidth) {
   //println("While #1"); //Demon Infinite LOOP
   iWhile++;
