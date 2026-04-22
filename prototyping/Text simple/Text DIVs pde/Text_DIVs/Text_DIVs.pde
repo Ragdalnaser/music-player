@@ -8,28 +8,31 @@ int appWidth = displayWidth;
 int appHeight = displayHeight;
 //
 // Population: DIVs
+//Population: DIVs
+int numberOfButtons = 13; //Half a button on either side as space, Center Button is Play
+int widthOfButton = appWidth/numberOfButtons;
+int beginningButtonSpace = widthOfButton;
 //
 float paperWidth = 11.0;
 float paperHeight = 13.0 ;
 //
-float songTitleDivX= appWidth * 1.5 ;
-float songTitleDivY= appHeight * 1.5 / paperHeight ;
-
-float songTitleDivWidth = appWidth * 6 / paperWidth ;
-float songTitleDivHeight = appHeight * 1 / paperHeight ; 
-float QuickbuttonDivX = appWidth * 0.0 ;
-float QuickbuttonDivY = appHeight  * 0.0 / paperHeight ;
-float QuickbuttonDivWidth = appWidth  * 0.5  / paperWidth ;
-float QuickbuttonDivHeight = appHeight * 0.4 / paperWidth;
-float messageDivX = appWidth *
-float messageDivY = appHeight *;
-float messageDivWidth = appWidth *;
-float messageDivHeight = appHeight *;
+float songTitleDivX= appWidth * 1.5 / 11;
+float songTitleDivY= appHeight * 1.5 / 13;
+float songTitleDivWidth = appWidth * 6 / 11 ;
+float songTitleDivHeight = appHeight * 1 / 13 ; 
+float QuickbuttonDivX = appWidth * 0.0/ 11 ;
+float QuickbuttonDivY = appHeight  * 0.0 / 13 ;
+float QuickbuttonDivWidth = appWidth  * 0.5  / 11 ;
+float QuickbuttonDivHeight = appHeight * 0.4 / 13;
+float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
+float messageDIV_Y = appHeight*1.5/20;
+float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
+float messageDIV_Height = appHeight*9/20;
 //
 // DIVs
 rect(songTitleDivX,songTitleDivY, songTitleDivWidth, songTitleDivHeight);
 rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
-rect( messageDivX, messageDivY, messageDivWidth, messageDivHeigth);
+rect( messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
 //
 //Strings, Text, Literal
 String Title = " Thunder";
@@ -64,13 +67,13 @@ String harrington = "Harrington"; //Spelling of the Font Matters, see PFont.list
 font = createFont(harrington, fontSize1);
 
 // Aspect  Ratio for harrington
-float FontSizeharrington = 83; // Default  Fontize  for -100%
+float FontSizeharrington = 75; // Default  Fontize  for -100%
 float DivHeightHarrington  = songTitleDivHeight ; // key value, value = 6;
 float harringtonAspectRatio = fontSize1 / DivHeightHarrington;// #<1;
 float textAdjustment = 0.9;
 fontSize1 = songTitleDivHeight*harringtonAspectRatio * textAdjustment;
 fontSize2 = messageDIV_Height*harringtonAspectRatio * textAdjustment;
-fontSize3 = quitHeight*harringtonAspectRatio * textAdjustment;
+fontSize3 = QuickbuttonDivHeight*harringtonAspectRatio * textAdjustment;
 //println (fontSize);
 
 //
@@ -116,7 +119,7 @@ while (textWidth(Title) > messageDIV_Width) {
 text( Title, messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
 textFont(font, fontSize3); //must include textSize() before text() & textWidth()
 iWhile=0;
-while (textWidth(Title) > quitWidth) {
+while (textWidth(Title) > QuickbuttonDivWidth) {
   //println("While #1"); //Demon Infinite LOOP
   iWhile++;
   if ( iWhile>1000 ) {
@@ -126,6 +129,6 @@ while (textWidth(Title) > quitWidth) {
   fontSize3 *= constantDecrease;
   textFont(font, fontSize3);
 }
-text( Title, quitX, quitY, quitWidth, quitHeight );
+text( Title, QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight );
 fill(resetInk);
 //
