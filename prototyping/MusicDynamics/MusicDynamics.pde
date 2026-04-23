@@ -6,7 +6,7 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
-// Global Varible
+// Global Varibles
 Minim minim;  //initates entire class
 int numberOfSongs = 3; //Best Practcie
 int numberOfSoundEffect = 1;
@@ -24,19 +24,13 @@ void setup() {
   minim = new Minim(this); //Mandatory;
   String upArrow= "../..";
   String open = "/";
-  String dependenciesFolder = " dependencies"; // Developer Specfic;
   String MusicFolder = " Music"; //Developer Specfic;
+  String dependenciesFolder = " dependencies"; // Developer Specfic;
   String SoundEffectFolder = "SoundEffect"; //Developer Specfic;
   //
-String [] songName= new String[numberOfSongs];
-songName[0]= "Ghost Walk";
-songName[1]= "Newsroom";
-songName[2]="Start_Your_Engines";
 
-  
-  
-  
-  
+
+
   String songName1 = "Ghost_Walk";
   String SoundEffect1 = "Spring_Attic_Door";
   String fileExtension_mp3 = ".mp3";
@@ -52,23 +46,25 @@ songName[2]="Start_Your_Engines";
   //
   //
   if (playlist[currentSong]==null || SoundEffects[currentSong]==null ) { //ERROR, play list is NULL
-  //See FILE or minim.loadFile
-  println("The Play List or Sound Effects did not load properly");
-  printArray(playlist);
-  printArray(SoundEffect1);
-  /*
+    //See FILE or minim.loadFile
+    println("The Play List or Sound Effects did not load properly");
+    printArray(playlist);
+    printArray(SoundEffect1);
+    /*
   println("Music Pathway", musicDirectory);
-   println("Full Music File Pathway", file);
-   */
-} else {
-  playlist[currentSong].play();
-  printArray(playlist);
-}
-
+     println("Full Music File Pathway", file);
+     */
+  } else {
+    playlist[currentSong].play();
+    printArray(playlist);
+  }
 }//End setup
 //
-void draw() {}//End draw
-// 
-void mousePressed() {}// End mouse Pressed
+void draw() {
+}//End draw
 //
-void keyPressed() {}// End key Pressed
+void mousePressed() {
+}// End mouse Pressed
+//
+void keyPressed() {
+}// End key Pressed
