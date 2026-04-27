@@ -8,7 +8,7 @@ int appWidth = displayWidth;
 int appHeight = displayHeight;
 //
 // Population: DIVs
-int numberOfButtons = 13; //Half a button on either side as space, Center Button is Play
+int numberOfButtons = 5; //Half a button on either side as space, Center Button is Play
 int widthOfButton = appWidth/numberOfButtons;
 int beginningButtonSpace = widthOfButton;
 //
@@ -19,10 +19,10 @@ float songTitleDivX= appWidth * 1.5 / 11;
 float songTitleDivY= appHeight * 1.5 / 13;
 float songTitleDivWidth = appWidth * 6 / 11 ;
 float songTitleDivHeight = appHeight * 1 / 13 ; 
-float QuickbuttonDivX = appWidth * 0.0/ 11 ;
-float QuickbuttonDivY = appHeight  * 0.0 / 13 ;
-float QuickbuttonDivWidth = appWidth  * 0.5  / 11 ;
-float QuickbuttonDivHeight = appHeight * 0.4 / 13;
+float QuickbuttonDivX = appWidth * 0.0  / paperWidth ;
+float QuickbuttonDivY = appHeight  * 0.0 / paperHeight ;
+float QuickbuttonDivWidth = appWidth  * 0.5  / paperWidth ;
+float QuickbuttonDivHeight = appHeight * 0.4 / paperHeight;
 float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
 float messageDIV_Y = appHeight*1.5/20;
 float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;

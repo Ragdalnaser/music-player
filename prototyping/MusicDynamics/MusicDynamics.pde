@@ -10,8 +10,8 @@ import ddf.minim.ugens.*;
 Minim minim;  //initates entire class
 int numberOfSongs = 3; //Best Practcie
 int numberOfSoundEffect = 1; //
-AudioPlayer[] playlist = new AudioPlayer [numberOfSongs];
-AudioPlayer[] SoundEffect = new AudioPlayer [numberOfSoundEffect];
+AudioPlayer[] playList = new AudioPlayer [numberOfSongs];
+AudioMetaData[] SoundEffect = new AudioMetaData [numberOfSoundEffect];
 int currentSong = numberOfSongs - numberOfSongs;// ZEERO, Math Property
 //
 void setup() {
@@ -20,62 +20,304 @@ void setup() {
   int appWidth = width;// Best Practice
   int appHeight = height;
   //
+  float songTitleDivX= appWidth * 1.5 / 11;
+float songTitleDivY= appHeight * 1.5 / 13;
+float songTitleDivWidth = appWidth * 6 / 11 ;
+float songTitleDivHeight = appHeight * 1 / 13 ; 
+float QuickbuttonDivY = appHeight  * 0.0 / 13 ;
+float QuickbuttonDivWidth = appWidth  * 0.5  / 11 ;
+float QuickbuttonDivHeight = appHeight * 0.4 / 13;
+float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
+float messageDIV_Y = appHeight*1.5/20;
+float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
+float messageDIV_Height = appHeight*9/20;
+
+// DIVs
+rect(songTitleDivX,songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
+rect( messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
+
+  
+  
+  
+  
+  
+  
   //Music Loading - Structured Review
   minim = new Minim(this); //Mandatory;
   String upArrow= "..";
   String open = "/";
   String musicFolder = "Music"; //Developer Specific
-  String SoundEffectFolder = "Sound Effects"; //Developer Specific
-  String dependenciesFolder = "Dependencies"; //Developer Specific
-  String songName1 = "Ghost_Walk" 
-  String SoundEffect1 = Spring_Attic_Door
-  String fileExtension - mp3 
+  String SoundEffectFolder = "SoundEffect"; //Developer Specific
+  String dependenciesFolder = "dependencies"; //Developer Specific
+  String songName1 = "Ghost_Walk" ;
+  String SoundEffect1 = "Spring_Attic_Door";
+  
   //
    
   
-
-  String SoundEffect1 = "Spring_Attic_Door";
+String[] songName = new String[numberOfSongs];
+  songName[currentSong] = "Ghost_Walk" ;
+    currentSong++;
+  songName[currentSong]="Newsroom"; 
+  currentSong++;
+  songName[currentSong]="Start_Your_Engines";
+  currentSong++;
+  currentSong=0;
+//  
+  
+ /* Alternate Song Name Text
+   String songName1 = "Newsroom";
+   String songName2 = "Start_Your_Engines";
+   String songName3 = "Ghost_Walk"; 
+  
+   */
   String fileExtension_mp3 = ".mp3";
 
   //
   //CAUTION: Mistakes Below
-  String musicDirectory=  upArrow + open + upArrow + open + dependenciesFolder + open + MusicFolder + open;//Concatenation
+  String musicDirectory=  upArrow + open + upArrow + open + dependenciesFolder + open + musicFolder + open;//Concatenation
   String SoundEffect1Directory =  upArrow + open + upArrow + open + dependenciesFolder + open + SoundEffectFolder + open;//Concatenation
-  String pathway;
-  for ( int i=0; i<numberOfSongs; i++ ) {
+  String pathway;  
+   for ( int i=0; i<numberOfSongs; i++ ) {
+    //CAUTION: removed ReadMe.txt
     pathway = musicDirectory + songName[i] + fileExtension_mp3; //TO BE Rewritten and deleted once file is LOADED
-    playList[ currentSong ] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
-  } 
+    println("Insde FOR, pathway:", pathway);
+    playList[ i ] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  
+    //CAUTION: not currentSong var
+    println(currentSong);
+  }
   pathway = SoundEffect1Directory + SoundEffect1 + fileExtension_mp3; //Rewritting FILE
   SoundEffect[currentSong] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
   //
-
-for ( int i=0; i<numberOfSongs; i++ ) {
+  for ( int i=0; i<numberOfSongs; i++ ) {
     if ( playList[i]==null ) { //ERROR, play list is NULL
       //See FILE or minim.loadFile
-      println("The Play list did not load properly");
+      println("The Play List did not load properly");
       printArray(playList);
       exit();
     }
   }
-  if ( soundEffect[currentSong]==null ) { //ERROR, play list is NULL
+  if ( SoundEffect[currentSong]==null ) { //ERROR, play list is NULL
     println("The Sound Effects did not load properly");
-    printArray(soundEffect);
+    printArray(SoundEffect);
     exit();
+    
+    
+    /* Fonts from OS
+ println ("start of Cansole");// ERROR: in case CONSOLE Memory not enough;
+ String[] fontlist = PFont.List(); // TO list all fonts to choose, then createFont
+ printlnArray( fontlist );// For listing all possible fonts to choose , then createfont
+ //Spelling counts and  and must comapare CONSOLE v Tools / create Font / create  font Spelling
+ //Tools / create Font / find  font / Do Not press "OK", known  conflict  between LoadFont() and createFont()
+ */
+ 
+ // Students enter all text from Case Study
+  String x = "X";
+  //
+  // Fonts from OS
+  //rect(height) is biggest font is word is the smallest
+  float fontSize1 = songTitleDivHeight; //1:1 Font Height to rectHeight
+  float fontSize2 = messageDIV_Height;
+  float fontSize3 = quitHeight;
+  PFont font; //Font Varaible Name, able to have more than one Font
+  String harrington = "Harrington"; //Spelling of the Font Matters, see PFont.list() v Create Font above
+  font = createFont(harrington, fontSize1);
+  //
+  
+  // Drawing Test
+color RedInk = #E82A2A; // AP Minilesson  in bit , 8-bit or byte ( gray scale 255
+color whiteInk=   #FFFFFF; // grey scale is 255
+color  resetInk  = whiteInk;
+fill(RedInk);// Ink  Hexidecimal copied from the color selector
+// Grey scale 0-255
+textFont(font, fontSize1);
+text( Title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+textAlign( CENTER, BASELINE);// Align, X&Y, See processing. org / reference
+// Values:[ LEFT|CENTRE|Right]& [Top|CENTER| BUTTOM| BASELINE];
+
+// Procedure Passing RECT(#2) && fontSize(RECT#)
+  float constantDecrease = 0.99;
+  int iWhile=0;
+  textFont(font, fontSize1); //must include textSize() before text() & textWidth()
+  while ( textWidth(x) > songTitleDivWidth ) {
+    //println("While #1"); //Infinite WHILE Check
+    iWhile++;
+    if ( iWhile>10000 ) { //>1000 means -1 text or i
+      println("Infninte WHILE Loop");
+      exit();
+    }
+    fontSize1 *= constantDecrease;
+    textFont(font, fontSize1);
+  }
+  text( x, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+  //
+  
+  
     }
     //
 }//End Setup
 //
 void draw() {
-  playList[currentSong].play();
+  //playList[currentSong].play();
+  SoundEffect[currentSong].play();
 }//End Draw
 //
 void mousePressed() {
 }//End Mouse Pressed
 //
-void keyPressed()
-   -
+void keyPressed() {
   
+    /* Simple Play
+   playList[currentSong].play();
+   currentSong++;
+   */
+  //
+  /* Key Board Short Cuts ... learning what the Music Buttons could be
+   Note: CAP Lock with ||
+   if ( key==? || key==? ) ; //'' only
+   -
+   if ( key==CODED || keyCode==SpecialKey ) ; //Special Keys abriviated CAPS
+   -
+   All Music Player Features are built out of these Minim AudioPlayer() functions
+   .isPlaying()
+   .isMuted()
+   .loop(0), parameter is number of iterations after play
+   .loop(), parameter is infinite interations
+   .play(), parameter is built-in skip (milli-seconds or crystal-time)
+   .pause()
+   .rewind()
+   .skip()
+   .unmute()
+   .mute()
+   -
+   Lesson Music Button Features based on single, double, and spamming taps
+   - Play
+   - Pause
+   - Stop
+   - Loop Once
+   - Loop Infinite
+   - Fast Forward
+   - Fast Rewind
+   - Mute
+   - Next Song
+   - Previous Song
+   - Shuffle
+   -
+   - Advanced Buttons & Combinations
+   - Play-Pause-Stop
+   - Auto Play
+   - Random Song
+   */
+  //if ( key=='P' || key=='p' ) playList[currentSong].play(); //Simple Play, no double tap possible
+  //
+  if ( key=='P' || key=='p' ) playList[currentSong].loop(0); //Simple Play, double tap possible
+  /* Note: double tap is automatic rewind, no pause
+   Symbol is two triangles
+   This changes what the button might become after it is pressed
+   */
+  if ( key=='O' || key=='o' ) { // Pause
+    //
+    if ( playList[currentSong].isPlaying() ) {
+      playList[currentSong].pause();
+    } else {
+      playList[currentSong].play();
+    }
+  }
+  //if ( key=='S' || key=='s' ) song[currentSong].pause(); //Simple Stop, no double taps
+  //
+  if ( key=='S' | key=='s' ) {
+    if ( playList[currentSong].isPlaying() ) {
+      playList[currentSong].pause(); //single tap
+    } else {
+      playList[currentSong].rewind(); //double tap
+    }
+  }
+  if ( key=='L' || key=='l' ) playList[currentSong].loop(1); // Loop ONCE: Plays, then plays again, then stops & rewinds
+  if ( key=='K' || key=='k' ) playList[currentSong].loop(); // Loop Infinitely //Parameter: BLANK or -1
+  if ( key=='F' || key=='f' ) playList[currentSong].skip( 10000 ); // Fast Forward, Rewind, & Play Again //Parameter: milliseconds
+  if ( key=='R' || key=='r' ) playList[currentSong].skip( -10000 ); // Fast Reverse & Play //Parameter: negative numbers
+  if ( key=='W' || key=='w' ) { // MUTE
+    //
+    //MUTE Behaviour: stops electricty to speakers, does not stop file
+    //NOTE: MUTE has NO built-in PUASE button, NO built-in rewind button
+    //ERROR: if song near end of file, user will not know song is at the end
+    //Known ERROR: once song plays, MUTE acts like it doesn't work
+    if ( playList[currentSong].isMuted() ) {
+      //ERROR: song might not be playing
+      //CATCH: ask .isPlaying() or !.isPlaying()
+      playList[currentSong].unmute();
+    } else {
+      //Possible ERROR: Might rewind the song
+      playList[currentSong].mute();
+    }
+  }
+  if ( key==CODED || keyCode==ESC ) exit(); // QUIT //UP
+  if ( key=='Q' || key=='q' ) exit(); // QUIT
+  //
+  if ( key=='N' || key=='n' ) { // NEXT //See .txt for starter hint
+    if ( playList[currentSong].isPlaying() ) {
+      playList[currentSong].pause();
+      playList[currentSong].rewind();
+      //
+      if ( currentSong==numberOfSongs-1 ) {
+        currentSong = 0;
+      } else {
+        currentSong++;
+      }
+      playList[currentSong].play();
+    } else {
+      //
+      playList[currentSong].rewind();
+      //
+      if ( currentSong==numberOfSongs-1 ) {
+        currentSong = 0;
+      } else {
+        currentSong++;
+      }
+      // NEXT will not automatically play the song
+      //song[currentSong].play();
+    }
+  }
+ if ( key=='B' || key=='b' ) { // PREVIOUS
+  if ( playList[currentSong].isPlaying() ) {
+    playList[currentSong].pause();
+    playList[currentSong].rewind();
+    
+    if ( currentSong==0 ) {
+      currentSong = numberOfSongs-1;
+    } else {
+      currentSong--;
+    }
+    
+    playList[currentSong].play();
+    
+  } else {
+    
+    playList[currentSong].rewind();
+    
+    if ( currentSong==0 ) {
+      currentSong = numberOfSongs-1;
+    } else {
+      currentSong--;
+    }
+    
+  }
+}
+  //
+  if ( key=='Y' || key=='y' ) currentSong = int(random(numberOfSongs)); //random(0, numberOfSongs)
+  //
+  //if ( key=='S' || key=='s' ) ; // Shuffle - PLAY (Random)
+  //Note: will randomize the currentSong number
+  //Caution: random() is used very often
+  //Question: how does truncating decimals affect returning random() floats
+  /*
+  if ( key=='' || key=='' ) ; // Play-Pause-STOP //Advanced, beyond single buttons
+   - need to have basic GUI complete first
+   */
+  //
 }//End Key Pressed
 //
 //End MAIN Program
+  
