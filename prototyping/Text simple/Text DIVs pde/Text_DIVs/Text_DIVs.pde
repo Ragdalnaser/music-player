@@ -84,7 +84,7 @@ textFont(font, fontSize1); //must include textSize() before text() & textWidth()
 //Additional docing required to adjust consistent text size for meaning in app
 float constantDecrease = 0.99;
 int iWhile=0;
-textAlign (CENTER, CENTER);
+textAlign (LEFT, CENTER);
 while (textWidth(Title) > songTitleDivWidth) {
   //println("While #1"); //Demon Infinite LOOP
   iWhile++;
