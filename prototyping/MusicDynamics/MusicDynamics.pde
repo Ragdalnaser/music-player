@@ -19,23 +19,31 @@ void setup() {
   fullScreen(); // displayWidth // displayHeight
   int appWidth = width;// Best Practice
   int appHeight = height;
-  //
-  float songTitleDivX= appWidth * 1.5 / 11;
+   //
+float paperWidth = 11.0;
+float paperHeight = 13.0 ;
+
+  //Population: DIVs
+int numberOfButtons = 5; //Half a button on either side as space, Center Button is Play
+int widthOfButton = appWidth/numberOfButtons;
+int beginningButtonSpace = widthOfButton;
+float songTitleDivX= appWidth * 1.5 / 11;
 float songTitleDivY= appHeight * 1.5 / 13;
-float songTitleDivWidth = appWidth * 6 / 11 ;
-float songTitleDivHeight = appHeight * 1 / 13 ; 
+float songTitleDivWidth = appWidth * 3 / 11 ;
+float songTitleDivHeight = appHeight * 1 / 13 ;
+float QuickbuttonDivX = appWidth * 0.0  / 11 ;
 float QuickbuttonDivY = appHeight  * 0.0 / 13 ;
 float QuickbuttonDivWidth = appWidth  * 0.5  / 11 ;
-float QuickbuttonDivHeight = appHeight * 0.4 / 13;
+float QuickbuttonDivHeight = appHeight * 0.4 / 12;
 float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
-float messageDIV_Y = appHeight*1.5/20;
+float messageDIV_Y = appHeight*4/20;
 float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
 float messageDIV_Height = appHeight*9/20;
 
 // DIVs
 rect(songTitleDivX,songTitleDivY, songTitleDivWidth, songTitleDivHeight);
 rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
-rect( messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
+rect(messageDIV_X,messageDIV_Y,messageDIV_Width,messageDIV_Height );
 
   
   
@@ -89,7 +97,7 @@ String[] songName = new String[numberOfSongs];
     println(currentSong);
   }
   pathway = SoundEffect1Directory + SoundEffect1 + fileExtension_mp3; //Rewritting FILE
-  SoundEffect[currentSong] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  playList[currentSong] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
   //
   for ( int i=0; i<numberOfSongs; i++ ) {
     if ( playList[i]==null ) { //ERROR, play list is NULL
@@ -120,7 +128,7 @@ String[] songName = new String[numberOfSongs];
   //rect(height) is biggest font is word is the smallest
   float fontSize1 = songTitleDivHeight; //1:1 Font Height to rectHeight
   float fontSize2 = messageDIV_Height;
-  float fontSize3 = quitHeight;
+  float fontSize3 = QuickbuttonDivHeight;
   PFont font; //Font Varaible Name, able to have more than one Font
   String harrington = "Harrington"; //Spelling of the Font Matters, see PFont.list() v Create Font above
   font = createFont(harrington, fontSize1);
@@ -133,8 +141,8 @@ color  resetInk  = whiteInk;
 fill(RedInk);// Ink  Hexidecimal copied from the color selector
 // Grey scale 0-255
 textFont(font, fontSize1);
-text( Title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-textAlign( CENTER, BASELINE);// Align, X&Y, See processing. org / reference
+text( x, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+textAlign( CENTER, CENTER);// Align, X&Y, See processing. org / reference
 // Values:[ LEFT|CENTRE|Right]& [Top|CENTER| BUTTOM| BASELINE];
 
 // Procedure Passing RECT(#2) && fontSize(RECT#)
@@ -161,7 +169,7 @@ textAlign( CENTER, BASELINE);// Align, X&Y, See processing. org / reference
 //
 void draw() {
   //playList[currentSong].play();
-  SoundEffect[currentSong].play();
+ // SoundEffect[currentSong].play();
 }//End Draw
 //
 void mousePressed() {
