@@ -17,20 +17,20 @@ float paperHeight = 13.0 ;
 //
 float songTitleDivX= appWidth * 1.5 / 11;
 float songTitleDivY= appHeight * 1.5 / 13;
-float songTitleDivWidth = appWidth * 6 / 11 ;
-float songTitleDivHeight = appHeight * 1 / 13 ; 
-float QuickbuttonDivX = appWidth * 0.0  / paperWidth ;
-float QuickbuttonDivY = appHeight  * 0.0 / paperHeight ;
-float QuickbuttonDivWidth = appWidth  * 0.5  / paperWidth ;
-float QuickbuttonDivHeight = appHeight * 0.4 / paperHeight;
+float songTitleDivWidth = appWidth * 3 / 11 ;
+float songTitleDivHeight = appHeight * 1 / 13 ;
+float QuickbuttonDivX = appWidth * 0.0  / 11 ;
+float QuickbuttonDivY = appHeight  * 0.0 / 13 ;
+float QuickbuttonDivWidth = appWidth  * 0.5  / 11 ;
+float QuickbuttonDivHeight = appHeight * 0.4 / 12;
 float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
-float messageDIV_Y = appHeight*1.5/20;
+float messageDIV_Y = appHeight*4/20;
 float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
 float messageDIV_Height = appHeight*9/20;
 //
 // DIVs
-rect(songTitleDivX,songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
+rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+//rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
 rect( messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
 //
 //Strings, Text, Literal
@@ -57,7 +57,7 @@ String Title = " Thunder";
 // students  enter all the text from the case study
 //
 // Fonts from OS
-float fontSize1 = appHeight; //Entire Program, Algorithm to have smallest font size
+float fontSize1 = songTitleDivHeight; //Entire Program, Algorithm to have smallest font size
 float fontSize2 = appHeight; //Entire Program, Algorithm to have smallest font size
 float fontSize3 = appHeight; //Entire Program, Algorithm to have smallest font size
 //println( fontSize );
@@ -65,14 +65,6 @@ PFont font; //font Varaible Name, able to have more than one Font
 String harrington = "Harrington"; //Spelling of the Font Matters, see PFont.list() v Create Font above
 font = createFont(harrington, fontSize1);
 
-// Aspect  Ratio for harrington
-float FontSizeharrington = 75; // Default  Fontize  for -100%
-float DivHeightHarrington  = songTitleDivHeight ; // key value, value = 6;
-float harringtonAspectRatio = fontSize1 / DivHeightHarrington;// #<1;
-float textAdjustment = 0.9;
-fontSize1 = songTitleDivHeight*harringtonAspectRatio * textAdjustment;
-fontSize2 = messageDIV_Height*harringtonAspectRatio * textAdjustment;
-fontSize3 = QuickbuttonDivHeight*harringtonAspectRatio * textAdjustment;
 //println (fontSize);
 
 //
@@ -83,7 +75,7 @@ color  resetInk  = whiteInk;
 fill(RedInk);// Ink  Hexidecimal copied from the color selector
 // Grey scale 0-255
 textFont(font, fontSize1);
-text( Title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+//text( Title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
 textAlign( CENTER, BASELINE);// Align, X&Y, See processing. org / reference
 // Values:[ LEFT|CENTRE|Right]& [Top|CENTER| BUTTOM| BASELINE];
 textFont(font, fontSize1); //must include textSize() before text() & textWidth()
