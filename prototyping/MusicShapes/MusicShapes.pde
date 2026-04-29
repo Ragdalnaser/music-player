@@ -33,9 +33,16 @@ float startsymbolDivHeight = DivHeight * 1/2;
 float stopsymbolDivX1 = DivX + DivWidth * 1/6 ;
 float stopsymbolDivY2 = DivY + DivHeight *1/6 ;
 float stopsymbolDivX3 = DivX + DivWidth * 1/2;
-float stopsymbolDivY4 = DivY + DivHeight* 1/6;
-float stopsymbolDivX5 = DivX + DivWidth*1/2;
-float stopsymbolDivY6 = DivY + DivHeight* 1/6;
+float stopsymbolDivY4 = DivY + DivHeight* 1/2;
+float stopsymbolDivX5 = DivX + DivWidth* 1/6;
+float stopsymbolDivY6 = DivY + DivHeight* 5/6;
+
+float stopsymbol2DivX1 = DivX + DivWidth * 1/2 ;
+float stopsymbol2DivY2 = DivY + DivHeight *1/6 ;
+float stopsymbol2DivX3 = DivX + DivWidth * 5/6;
+float stopsymbol2DivY4 = DivY + DivHeight* 1/2;
+float stopsymbol2DivX5 = DivX + DivWidth* 1/2;
+float stopsymbol2DivY6 = DivY + DivHeight* 5/6;
 
 
 
@@ -47,12 +54,15 @@ float mutesymbolDivHeight = DivHeight ;
 
 float recordsymbolDivX = DivX + DivWidth* 1/2;
 float recordsymbolDivY = DivY + DivHeight * 1/2;
-float recordsymbolDivWidth = DivWidth  ;
-float recordsymbolDivHeight = DivHeight  ;
+float recordsymbolDivWidth = DivWidth /2  ;
+float recordsymbolDivHeight = DivHeight /2  ;
 
 rect(DivX, DivY, DivWidth, DivHeight);
 //triangle( playSymbolDivX1,playSymbolDivY2, playSymbolDivX3, playSymbolDivY4,playSymbolDivX5, playSymbolDivY6 );
 //rect( startsymbolDivX, startsymbolDivY, startsymbolDivWidth, startsymbolDivHeight );
-triangle(stopsymbolDivX1, stopsymbolDivY2, stopsymbolDivX3, stopsymbolDivY4 ,stopsymbolDivX5, stopsymbolDivY6);
-ellipse( mutesymbolDivX, mutesymbolDivY, mutesymbolDivWidth, mutesymbolDivHeight);
-Circle( recordsymbolDivX, recordsymbolDivY, recordsymbolDivWidth, recordsymbolDivHeight);
+
+//triangle(stopsymbolDivX1, stopsymbolDivY2, stopsymbolDivX3, stopsymbolDivY4 ,stopsymbolDivX5, stopsymbolDivY6);
+//triangle(stopsymbol2DivX1, stopsymbol2DivY2, stopsymbol2DivX3, stopsymbol2DivY4 ,stopsymbol2DivX5, stopsymbol2DivY6);
+
+//ellipse( mutesymbolDivX, mutesymbolDivY, mutesymbolDivWidth, mutesymbolDivHeight);
+ellipse( recordsymbolDivX, recordsymbolDivY, recordsymbolDivWidth, recordsymbolDivHeight);
