@@ -65,4 +65,4 @@ rect(DivX, DivY, DivWidth, DivHeight);
 //triangle(stopsymbol2DivX1, stopsymbol2DivY2, stopsymbol2DivX3, stopsymbol2DivY4 ,stopsymbol2DivX5, stopsymbol2DivY6);
 
 //ellipse( mutesymbolDivX, mutesymbolDivY, mutesymbolDivWidth, mutesymbolDivHeight);
-ellipse( recordsymbolDivX, recordsymbolDivY, recordsymbolDivWidth, recordsymbolDivHeight);
+//ellipse( recordsymbolDivX, recordsymbolDivY, recordsymbolDivWidth, recordsymbolDivHeight);

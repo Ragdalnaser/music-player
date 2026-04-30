@@ -13,7 +13,11 @@ int numberOfSoundEffect = 1; //
 AudioPlayer[] playList = new AudioPlayer [numberOfSongs];
 AudioMetaData[] SoundEffect = new AudioMetaData [numberOfSoundEffect];
 int currentSong = numberOfSongs - numberOfSongs;// ZEERO, Math Property
+
 //
+float songTitleDivX,songTitleDivY,songTitleDivWidth,songTitleDivHeight;
+color RedInk, resetInk;
+  //
 void setup() {
   //Display
   fullScreen(); // displayWidth // displayHeight
@@ -27,10 +31,10 @@ float paperHeight = 13.0 ;
 int numberOfButtons = 5; //Half a button on either side as space, Center Button is Play
 int widthOfButton = appWidth/numberOfButtons;
 int beginningButtonSpace = widthOfButton;
-float songTitleDivX= appWidth * 1.5 / 11;
-float songTitleDivY= appHeight * 1.5 / 13;
-float songTitleDivWidth = appWidth * 3 / 11 ;
-float songTitleDivHeight = appHeight * 1 / 13 ;
+ songTitleDivX= appWidth * 1.5 / 11;
+ songTitleDivY= appHeight * 1.5 / 13;
+ songTitleDivWidth = appWidth * 3 / 11 ;
+ songTitleDivHeight = appHeight * 1 / 13 ;
 float QuickbuttonDivX = appWidth * 0.0  / 11 ;
 float QuickbuttonDivY = appHeight  * 0.0 / 13 ;
 float QuickbuttonDivWidth = appWidth  * 0.5  / 11 ;
@@ -58,7 +62,7 @@ rect(messageDIV_X,messageDIV_Y,messageDIV_Width,messageDIV_Height );
   String musicFolder = "Music"; //Developer Specific
   String SoundEffectFolder = "SoundEffect"; //Developer Specific
   String dependenciesFolder = "dependencies"; //Developer Specific
-  String songName1 = "Ghost_Walk" ;
+  String songName1 = "Ghost_Walk";
   String SoundEffect1 = "Spring_Attic_Door";
   
   //
@@ -137,19 +141,18 @@ String[] songName = new String[numberOfSongs];
   // Drawing Test
 color RedInk = #E82A2A; // AP Minilesson  in bit , 8-bit or byte ( gray scale 255
 color whiteInk=   #FFFFFF; // grey scale is 255
-color  resetInk  = whiteInk;
 fill(RedInk);// Ink  Hexidecimal copied from the color selector
 // Grey scale 0-255
 textFont(font, fontSize1);
 text( x, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-textAlign( CENTER, CENTER);// Align, X&Y, See processing. org / reference
+textAlign( LEFT, CENTER);// Align, X&Y, See processing. org / reference
 // Values:[ LEFT|CENTRE|Right]& [Top|CENTER| BUTTOM| BASELINE];
 
 // Procedure Passing RECT(#2) && fontSize(RECT#)
   float constantDecrease = 0.99;
   int iWhile=0;
   textFont(font, fontSize1); //must include textSize() before text() & textWidth()
-  while ( textWidth(x) > songTitleDivWidth ) {
+  while ( textWidth(playListMetaData[currentSong].Title()) > songTitleDivWidth ) {
     //println("While #1"); //Infinite WHILE Check
     iWhile++;
     if ( iWhile>10000 ) { //>1000 means -1 text or i
@@ -159,8 +162,11 @@ textAlign( CENTER, CENTER);// Align, X&Y, See processing. org / reference
     fontSize1 *= constantDecrease;
     textFont(font, fontSize1);
   }
-  text( x, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+  text( (playListMetaData[currentSong]. Title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+  fill(resetInk);
   //
+  //playList[currentSong].play();
+ // SoundEffect[currentSong].play();
   
   
     }
@@ -168,8 +174,10 @@ textAlign( CENTER, CENTER);// Align, X&Y, See processing. org / reference
 }//End Setup
 //
 void draw() {
-  //playList[currentSong].play();
- // SoundEffect[currentSong].play();
+ rect(songTitleDivX,songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+ fill(RedInk);
+ text( (playListMetaData[currentSong]. Title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+ fill(#FFFFFF);// resetInk
 }//End Draw
 //
 void mousePressed() {
