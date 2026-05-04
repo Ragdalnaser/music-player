@@ -11,7 +11,7 @@ Minim minim;  //initates entire class
 int numberOfSongs = 3; //Best Practcie
 int numberOfSoundEffect = 1; //
 AudioPlayer[] playList = new AudioPlayer[numberOfSongs];
-AudioMetaData[] playListMetaData = new AudioMetaData[  numberOfSongs];
+AudioMetaData[] playListMetaData = new AudioMetaData[numberOfSongs];
 AudioPlayer[] SoundEffect = new AudioPlayer [numberOfSoundEffect];
 int currentSong = numberOfSongs - numberOfSongs;// ZEERO, Math Property
 
@@ -63,7 +63,7 @@ void setup() {
   String musicFolder = "Music"; //Developer Specific
   String SoundEffectFolder = "SoundEffect"; //Developer Specific
   String dependenciesFolder = "dependencies"; //Developer Specific
-  String SoundEffect1 = "Spring Attic Door";
+  String SoundEffect1 = "Spring_Attic_Door";
 
   //
 
@@ -83,7 +83,6 @@ void setup() {
    String songName3 = "Ghost_Walk";
    
    */
-  String title = "Title";
   String fileExtension_mp3 = ".mp3";
 
   //
