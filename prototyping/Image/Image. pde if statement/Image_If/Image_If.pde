@@ -59,7 +59,7 @@ if( imageWidth1>= imageWidth){
 
 //println( float (imageWidth2)/float(imageHeight2)  );
 // Ternary operator for As[pect Ratio: Q: greatone v lessone;
-float image1AspectRation_GreatOne = (imageWidth1 > imageHeight1)? float(imageWidth1) / float(imageHeight1) : float(imageHeight1) / float( imageWidth1);
+float image2AspectRation_GreatOne = (imageWidth2 > imageHeight2)? float(imageWidth1) / float(imageHeight1) : float(imageHeight1) / float( imageWidth1);
 println("Verify Image Aspect Ratio Greater than One:", image1AspectRation_GreatOne>=1, "\tActual Number:", image1AspectRation_GreatOne);
 float imageWidthAdjusted1 = imageDivWidth; 
 println( "Comparison of imageHeight1 and divHeight:", imageHeight1, imageDivHeight);
