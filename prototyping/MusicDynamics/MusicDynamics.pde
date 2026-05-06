@@ -114,64 +114,67 @@ void setup() {
     println("The Sound Effects did not load properly");
     printArray(SoundEffect);
     exit();
-
-
-    /* Fonts from OS
-     println ("start of Cansole");// ERROR: in case CONSOLE Memory not enough;
-     String[] fontlist = PFont.List(); // TO list all fonts to choose, then createFont
-     printlnArray( fontlist );// For listing all possible fonts to choose , then createfont
-     //Spelling counts and  and must comapare CONSOLE v Tools / create Font / create  font Spelling
-     //Tools / create Font / find  font / Do Not press "OK", known  conflict  between LoadFont() and createFont()
-     */
-
-    // Students enter all text from Case Study
-    String x = "X";
-    //
-    // Fonts from OS
-    //rect(height) is biggest font is word is the smallest
-    float fontSize1 = songTitleDivHeight; //1:1 Font Height to rectHeight
-    float fontSize2 = messageDIV_Height;
-    float fontSize3 = QuickbuttonDivHeight;
-    PFont font; //Font Varaible Name, able to have more than one Font
-    String harrington = "Harrington"; //Spelling of the Font Matters, see PFont.list() v Create Font above
-    font = createFont(harrington, fontSize1);
-    //
-
-    // Drawing Test
-    color RedInk = #E82A2A; // AP Minilesson  in bit , 8-bit or byte ( gray scale 255
-    color whiteInk=   #FFFFFF; // grey scale is 255
-    fill(RedInk);// Ink  Hexidecimal copied from the color selector
-    // Grey scale 0-255
-    textFont(font, fontSize1);
-    text( x, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-    textAlign( LEFT, CENTER);// Align, X&Y, See processing. org / reference
-    // Values:[ LEFT|CENTRE|Right]& [Top|CENTER| BUTTOM| BASELINE];
-
-    // Procedure Passing RECT(#2) && fontSize(RECT#)
-    float constantDecrease = 0.99;
-    int iWhile=0;
-    textFont(font, fontSize1); //must include textSize() before text() & textWidth()
-    while ( textWidth(playListMetaData[currentSong].fileName()) > songTitleDivWidth ) {
-      println("Help ? Troubleshooting");
-      //println("While #1"); //Infinite WHILE Check
-      iWhile++;
-      if ( iWhile>10000 ) { //>1000 means -1 text or i
-        println("Infninte WHILE Loop");
-        exit();
-      }
-      fontSize1 *= constantDecrease;
-      textFont(font, fontSize1);
-    }
-    text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
-    fill(resetInk);
-    //
-    //playList[currentSong].play();
-    // SoundEffect[currentSong].play();
   }
+
+  /* Fonts from OS
+   println ("start of Cansole");// ERROR: in case CONSOLE Memory not enough;
+   String[] fontlist = PFont.List(); // TO list all fonts to choose, then createFont
+   printlnArray( fontlist );// For listing all possible fonts to choose , then createfont
+   //Spelling counts and  and must comapare CONSOLE v Tools / create Font / create  font Spelling
+   //Tools / create Font / find  font / Do Not press "OK", known  conflict  between LoadFont() and createFont()
+   */
+
+  // Students enter all text from Case Study
+  String x = "X";
   //
-}//End Setup
+  // Fonts from OS
+  //rect(height) is biggest font is word is the smallest
+  float fontSize1 = songTitleDivHeight; //1:1 Font Height to rectHeight
+  float fontSize2 = messageDIV_Height;
+  float fontSize3 = QuickbuttonDivHeight;
+  PFont font; //Font Varaible Name, able to have more than one Font
+  String harrington = "Harrington"; //Spelling of the Font Matters, see PFont.list() v Create Font above
+  font = createFont(harrington, fontSize1);
+  //
+
+  // Drawing Test
+  color RedInk = #E82A2A; // AP Minilesson  in bit , 8-bit or byte ( gray scale 255
+  color whiteInk=   #FFFFFF; // grey scale is 255
+  fill(RedInk);// Ink  Hexidecimal copied from the color selector
+  // Grey scale 0-255
+  textFont(font, fontSize1);
+  text( x, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+  textAlign( LEFT, CENTER);// Align, X&Y, See processing. org / reference
+  // Values:[ LEFT|CENTRE|Right]& [Top|CENTER| BOTTOM| BASELINE];
+
+  // Procedure Passing RECT(#2) && fontSize(RECT#)
+  float constantDecrease = 0.99;
+  int iWhile=0;
+  textFont(font, fontSize1); //must include textSize() before text() & textWidth()
+  while ( textWidth(playListMetaData[currentSong].fileName()) > songTitleDivWidth ) {
+    println("Help ? Troubleshooting");
+    //println("While #1"); //Infinite WHILE Check
+    iWhile++;
+    if ( iWhile>10000 ) { //>1000 means -1 text or i
+      println("Infninte WHILE Loop");
+      exit();
+    }
+    fontSize1 *= constantDecrease;
+    textFont(font, fontSize1);
+  }
+  text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+  fill(resetInk);
+  //
+  //playList[currentSong].play();
+  // SoundEffect[currentSong].play();
+}
+//
+//End Setup
 //
 void draw() {
+  if (!playList[currentSong].isPlaying()) {
+    playList[currentSong].play();
+  }
   rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
   fill(RedInk);
   text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
