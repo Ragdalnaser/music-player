@@ -80,10 +80,67 @@ void setup() {/* DIVs 2D rectangles
   rect(MusicbuttonDivX3, MusicbuttonDivY3, MusicbuttonDivWidth3, MusicbuttonDivHeight3);
   rect(MusicbuttonDivX4, MusicbuttonDivY4, MusicbuttonDivWidth4, MusicbuttonDivHeight4);
   rect(MusicbuttonDivX5, MusicbuttonDivY5, MusicbuttonDivWidth5, MusicbuttonDivHeight5);
+  /* Divs 2D rectangles;
+*/
+//
+println(displayWidth, displayHeight);
+fullScreen();
+//
+
+float playSymbolDivX1 = MusicbuttonDivX1 + MusicbuttonDivWidth1*1/4;
+float playSymbolDivY2 = MusicbuttonDivY1 +  MusicbuttonDivHeight1*1/4;
+float playSymbolDivX3 = MusicbuttonDivX2 + MusicbuttonDivWidth2*3/4;
+float playSymbolDivY4 = MusicbuttonDivY2 +  MusicbuttonDivHeight2* 1/2;
+float playSymbolDivX5 = MusicbuttonDivX3+ MusicbuttonDivWidth3* 1/4;
+float playSymbolDivY6 = MusicbuttonDivY3 + MusicbuttonDivHeight3*3/4;
+
+float startsymbolDivX1 = MusicbuttonDivX1 + MusicbuttonDivWidth1 * 1/4;
+float startsymbolDivY2 = MusicbuttonDivY2 + MusicbuttonDivHeight2 * 1/4;
+float startsymbolDivWidth3 =DivWidth3+DivHeight3 * 1/2;
+
+
+
+
+
+float stopsymbolDivX1 = MusicbuttonDivX1 + MusicbuttonDivWidth1* 1/6 ;
+float stopsymbolDivY2 = MusicbuttonDivY1+ MusicbuttonDivHeight1*1/6 ;
+float stopsymbolDivX3 = MusicbuttonDivX2 + MusicbuttonDivWidth2* 1/2;
+float stopsymbolDivY4 = MusicbuttonDivY2 + MusicbuttonDivHeight2* 1/2;
+float stopsymbolDivX5 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/6;
+float stopsymbolDivY6 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 5/6;
+
+float stopsymbol2DivX1 = MusicbuttonDivX1 + MusicbuttonDivWidth1 * 1/2 ;
+float stopsymbol2DivY2 = MusicbuttonDivY1 + MusicbuttonDivHeight1 *1/6 ;
+float stopsymbol2DivX3 = MusicbuttonDivX2 + MusicbuttonDivWidth2 * 5/6;
+float stopsymbol2DivY4 = MusicbuttonDivY2 + MusicbuttonDivHeight2* 1/2;
+float stopsymbol2DivX5 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/2;
+float stopsymbol2DivY6 = MusicbuttonDivY4 + MusicbuttonDivHeight4* 5/6;
+
+
+
+float mutesymbolDivX1 = MusicbuttonDivX1+MusicbuttonDivWidth1 * 1/2 ;
+float mutesymbolDivY2 = MusicbuttonDivY2 + MusicbuttonDivHeight2 * 1/2 ;
+float mutesymbolDivWidth3 = MusicbuttonDivWidth3   ;
+float mutesymbolDivHeight4 = MusicbuttonDivHeight4 ;
+
+
+float recordsymbolDivX1 = MusicbuttonDivX1 + MusicbuttonDivWidth1* 1/2;
+float recordsymbolDivY2 = MusicbuttonDivY2 + MusicbuttonDivHeight2 * 1/2;
+float recordsymbolDivWidth3 = MusicbuttonDivWidth3 /2  ;
+float recordsymbolDivHeight4 = MusicbuttonDivHeight3 /2  ;
+
+rect(MusicbuttonDivX1, MusicbuttonDivY2, MusicbuttonDivWidth3, MusicbuttonDivHeight4);
+triangle( playSymbolDivX1,playSymbolDivY2, playSymbolDivX3, playSymbolDivY4, playSymbolDivX5,playSymbolDivY6 );
+rect( startsymbolDivX1, startsymbolDivY2,startsymbolDivWidth3 ,startsymbolDivHeight4, );
+
+triangle(stopsymbolDivX1, stopsymbolDivY2, stopsymbolDivX3,stopsymbolDivY4 ,stopsymbolDivX5, stopsymbolDivY6);
+triangle(stopsymbolDivX1, stopsymbolDivY2, stopsymbolDivX3, stopsymbolDivY4,stopsymbolDivX4,stopsymbolDivY6);
+
+ellipse( mutesymbolDivX1, mutesymbolDivY2, mutesymbolDivWidth3,mutesymbolDivHeight4);
+ellipse( recordsymbolDivX1, recordsymbolDivY2, recordsymbolDivWidth3, recordsymbolDivHeight4);
+
 }//End Setup
 //
-/* DIVs 2D rectangles
- */
 //
 //println(displayWidth, displayHeight);
 
