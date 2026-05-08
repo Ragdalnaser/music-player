@@ -12,13 +12,17 @@ import ddf.minim.ugens.*;
 //
 //Glbal Varibles
 //
-void setup() {/* DIVs 2D rectangles
- */
+void setup() {
+  //Display
+  //fullScreen
+  int appWidth = width;//displayWidth
+  int appHeight = height;//displayHeight
+  /* DIVs 2D rectangles
+   */
   //
-  println(displayWidth, displayHeight);
+ 
   fullScreen();
-  int appWidth= displayWidth ;
-  int appHeight= displayHeight ;
+
   //
   float paperWidth = 11.0;
   float paperHeight = 13.0 ;
@@ -81,64 +85,61 @@ void setup() {/* DIVs 2D rectangles
   rect(MusicbuttonDivX4, MusicbuttonDivY4, MusicbuttonDivWidth4, MusicbuttonDivHeight4);
   rect(MusicbuttonDivX5, MusicbuttonDivY5, MusicbuttonDivWidth5, MusicbuttonDivHeight5);
   /* Divs 2D rectangles;
-*/
-//
-println(displayWidth, displayHeight);
-fullScreen();
-//
+   */
+  //
 
-float playSymbolDivX1 = MusicbuttonDivX1 + MusicbuttonDivWidth1*1/4;
-float playSymbolDivY2 = MusicbuttonDivY1 +  MusicbuttonDivHeight1*1/4;
-float playSymbolDivX3 = MusicbuttonDivX2 + MusicbuttonDivWidth2*3/4;
-float playSymbolDivY4 = MusicbuttonDivY2 +  MusicbuttonDivHeight2* 1/2;
-float playSymbolDivX5 = MusicbuttonDivX3+ MusicbuttonDivWidth3* 1/4;
-float playSymbolDivY6 = MusicbuttonDivY3 + MusicbuttonDivHeight3*3/4;
+  float playSymbol1DivX1 = MusicbuttonDivX1 + MusicbuttonDivWidth1*1/4;
+  float playSymbol1DivY2 = MusicbuttonDivY1 +  MusicbuttonDivHeight1*1/4;
+  float playSymbol1DivX3 = MusicbuttonDivX1 + MusicbuttonDivWidth1*3/4;
+  float playSymbol1DivY4 = MusicbuttonDivY1 +  MusicbuttonDivHeight1* 1/2;
+  float playSymbol1DivX5 = MusicbuttonDivX1 + MusicbuttonDivWidth1* 1/4;
+  float playSymbol1DivY6 = MusicbuttonDivY1 + MusicbuttonDivHeight1*3/4;
 
-float startsymbolDivX1 = MusicbuttonDivX1 + MusicbuttonDivWidth1 * 1/4;
-float startsymbolDivY2 = MusicbuttonDivY2 + MusicbuttonDivHeight2 * 1/4;
-float startsymbolDivWidth3 =DivWidth3+DivHeight3 * 1/2;
+  float startsymbol2DivX1 = MusicbuttonDivX2 + MusicbuttonDivWidth2 * 1/4;
+  float startsymbol2DivY2 = MusicbuttonDivY2 + MusicbuttonDivHeight2 * 1/4;
+  float startsymbol2DivWidth3 = MusicbuttonDivWidth2 * 1/2;
+  float startsymbol2DivHeight4 = MusicbuttonDivHeight2 * 1/2;
 
 
 
 
 
-float stopsymbolDivX1 = MusicbuttonDivX1 + MusicbuttonDivWidth1* 1/6 ;
-float stopsymbolDivY2 = MusicbuttonDivY1+ MusicbuttonDivHeight1*1/6 ;
-float stopsymbolDivX3 = MusicbuttonDivX2 + MusicbuttonDivWidth2* 1/2;
-float stopsymbolDivY4 = MusicbuttonDivY2 + MusicbuttonDivHeight2* 1/2;
-float stopsymbolDivX5 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/6;
-float stopsymbolDivY6 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 5/6;
+  float stopsymbol3DivX1 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/6 ;
+  float stopsymbol3DivY2 = MusicbuttonDivY3+ MusicbuttonDivHeight3*1/6 ;
+  float stopsymbol3DivX3 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/2;
+  float stopsymbol3DivY4 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 1/2;
+  float stopsymbol3DivX5 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/6;
+  float stopsymbol3DivY6 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 5/6;
 
-float stopsymbol2DivX1 = MusicbuttonDivX1 + MusicbuttonDivWidth1 * 1/2 ;
-float stopsymbol2DivY2 = MusicbuttonDivY1 + MusicbuttonDivHeight1 *1/6 ;
-float stopsymbol2DivX3 = MusicbuttonDivX2 + MusicbuttonDivWidth2 * 5/6;
-float stopsymbol2DivY4 = MusicbuttonDivY2 + MusicbuttonDivHeight2* 1/2;
-float stopsymbol2DivX5 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/2;
-float stopsymbol2DivY6 = MusicbuttonDivY4 + MusicbuttonDivHeight4* 5/6;
-
-
-
-float mutesymbolDivX1 = MusicbuttonDivX1+MusicbuttonDivWidth1 * 1/2 ;
-float mutesymbolDivY2 = MusicbuttonDivY2 + MusicbuttonDivHeight2 * 1/2 ;
-float mutesymbolDivWidth3 = MusicbuttonDivWidth3   ;
-float mutesymbolDivHeight4 = MusicbuttonDivHeight4 ;
+  float stopsymbol4DivX1 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/2 ;
+  float stopsymbol4DivY2 = MusicbuttonDivY3 + MusicbuttonDivHeight3 *1/6 ;
+  float stopsymbol4DivX3 = MusicbuttonDivX3 + MusicbuttonDivWidth3 * 5/6;
+  float stopsymbol4DivY4 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 1/2;
+  float stopsymbol4DivX5 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/2;
+  float stopsymbol4DivY6 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 5/6;
 
 
-float recordsymbolDivX1 = MusicbuttonDivX1 + MusicbuttonDivWidth1* 1/2;
-float recordsymbolDivY2 = MusicbuttonDivY2 + MusicbuttonDivHeight2 * 1/2;
-float recordsymbolDivWidth3 = MusicbuttonDivWidth3 /2  ;
-float recordsymbolDivHeight4 = MusicbuttonDivHeight3 /2  ;
 
-rect(MusicbuttonDivX1, MusicbuttonDivY2, MusicbuttonDivWidth3, MusicbuttonDivHeight4);
-triangle( playSymbolDivX1,playSymbolDivY2, playSymbolDivX3, playSymbolDivY4, playSymbolDivX5,playSymbolDivY6 );
-rect( startsymbolDivX1, startsymbolDivY2,startsymbolDivWidth3 ,startsymbolDivHeight4, );
+  float mutesymbolDivX1 = MusicbuttonDivX5+MusicbuttonDivWidth1 * 1/2 ;
+  float mutesymbolDivY1 = MusicbuttonDivY5 + MusicbuttonDivHeight2 * 1/2 ;
+  float mutesymbolDivWidth3 = MusicbuttonDivWidth5   ;
+  float mutesymbolDivHeight4 = MusicbuttonDivHeight5;
 
-triangle(stopsymbolDivX1, stopsymbolDivY2, stopsymbolDivX3,stopsymbolDivY4 ,stopsymbolDivX5, stopsymbolDivY6);
-triangle(stopsymbolDivX1, stopsymbolDivY2, stopsymbolDivX3, stopsymbolDivY4,stopsymbolDivX4,stopsymbolDivY6);
 
-ellipse( mutesymbolDivX1, mutesymbolDivY2, mutesymbolDivWidth3,mutesymbolDivHeight4);
-ellipse( recordsymbolDivX1, recordsymbolDivY2, recordsymbolDivWidth3, recordsymbolDivHeight4);
+  float recordsymbolDivX1 = MusicbuttonDivX1 + MusicbuttonDivWidth1* 1/2;
+  float recordsymbolDivY2 = MusicbuttonDivY2 + MusicbuttonDivHeight2 * 1/2;
+  float recordsymbolDivWidth3 = MusicbuttonDivWidth3 /2  ;
+  float recordsymbolDivHeight4 = MusicbuttonDivHeight3 /2  ;
 
+  rect(MusicbuttonDivX1, MusicbuttonDivY2, MusicbuttonDivWidth3, MusicbuttonDivHeight4);
+  triangle(playSymbol1DivX1, playSymbol1DivY2, playSymbol1DivX3, playSymbol1DivY4, playSymbol1DivX5, playSymbol1DivY6);
+  rect( startsymbol2DivX1, startsymbol2DivY2, startsymbol2DivWidth3, startsymbol2DivHeight4 );
+
+  triangle(stopsymbol4DivX1, stopsymbol4DivY2, stopsymbol4DivX3, stopsymbol4DivY4, stopsymbol4DivX5, stopsymbol4DivY6);
+  triangle(stopsymbol4DivX1, stopsymbol4DivY2, stopsymbol4DivX3, stopsymbol4DivY4,stopsymbol4DivX5, stopsymbol4DivY6);
+
+  ellipse( mutesymbolDivX1, mutesymbolDivY2, mutesymbolDivWidth3, mutesymbolDivHeight4);
+  ellipse( recordsymbolDivX1, recordsymbolDivY2, recordsymbolDivWidth3, recordsymbolDivHeight4);
 }//End Setup
 //
 //
