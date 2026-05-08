@@ -151,7 +151,7 @@ void setup() {
   float constantDecrease = 0.99;
   int iWhile=0;
   textFont(font, fontSize1); //must include textSize() before text() & textWidth()
-  while ( textWidth(playListMetaData[currentSong].fileName()) > songTitleDivWidth ) {
+  while (TextWidth(playListMetaData[currentSong].fileName()) > songTitleDivWidth ) {
     println("Help ? Troubleshooting");
     //println("While #1"); //Infinite WHILE Check
     iWhile++;
