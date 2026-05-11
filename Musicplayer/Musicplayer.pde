@@ -20,7 +20,7 @@ void setup() {
   /* DIVs 2D rectangles
    */
   //
- 
+
   fullScreen();
 
   //
@@ -36,11 +36,6 @@ void setup() {
   float QuickbuttonDivY = appHeight  * 0.0 / paperHeight ;
   float QuickbuttonDivWidth = appWidth  * 0.5  / paperWidth ;
   float QuickbuttonDivHeight = appHeight * 0.4 / paperHeight;
-
-  float ImageDivX= appWidth * 1.5 / paperWidth ;
-  float ImageDivY= appHeight * 4.1 / paperHeight;
-  float ImageDivWidth = appWidth *  7 / paperWidth  ;
-  float ImageDivHeight = appHeight * 6.5 /  paperHeight;
 
   float outerboxDivX = appWidth * 1.5 / paperWidth;
   float outerboxDivY = appHeight * 4.9 / paperHeight;
@@ -76,7 +71,6 @@ void setup() {
 
   //rect( DivX, DivY, DivWidth, DivHeight);
   rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-  rect(ImageDivX, ImageDivY, ImageDivWidth, ImageDivHeight);
   rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
   //rect(outerboxDivX, outerboxDivY, outerboxDivWidth, outerboxDivHeight);
   rect(MusicbuttonDivX1, MusicbuttonDivY1, MusicbuttonDivWidth1, MusicbuttonDivHeight1);
@@ -111,35 +105,230 @@ void setup() {
   float stopsymbol3DivX5 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/6;
   float stopsymbol3DivY6 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 5/6;
 
-  float stopsymbol4DivX1 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/2 ;
-  float stopsymbol4DivY2 = MusicbuttonDivY3 + MusicbuttonDivHeight3 *1/6 ;
-  float stopsymbol4DivX3 = MusicbuttonDivX3 + MusicbuttonDivWidth3 * 5/6;
-  float stopsymbol4DivY4 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 1/2;
-  float stopsymbol4DivX5 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/2;
-  float stopsymbol4DivY6 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 5/6;
+  float stopsymbol6DivX1 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/2 ;
+  float stopsymbol6DivY2 = MusicbuttonDivY3 + MusicbuttonDivHeight3 *1/6 ;
+  float stopsymbol6DivX3 = MusicbuttonDivX3 + MusicbuttonDivWidth3 * 5/6;
+  float stopsymbol6DivY4 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 1/2;
+  float stopsymbol6DivX5 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/2;
+  float stopsymbol6DivY6 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 5/6;
 
 
 
-  float mutesymbolDivX1 = MusicbuttonDivX5+MusicbuttonDivWidth1 * 1/2 ;
-  float mutesymbolDivY1 = MusicbuttonDivY5 + MusicbuttonDivHeight2 * 1/2 ;
-  float mutesymbolDivWidth3 = MusicbuttonDivWidth5   ;
-  float mutesymbolDivHeight4 = MusicbuttonDivHeight5;
+  float mutesymbol4DivX1 = MusicbuttonDivX4+MusicbuttonDivWidth4 * 1/2 ;
+  float mutesymbol4DivY2 = MusicbuttonDivY4 + MusicbuttonDivHeight4 * 1/2 ;
+  float mutesymbol4DivWidth3 = MusicbuttonDivWidth4   ;
+  float mutesymbol4DivHeight4 = MusicbuttonDivHeight4;
 
 
-  float recordsymbolDivX1 = MusicbuttonDivX1 + MusicbuttonDivWidth1* 1/2;
-  float recordsymbolDivY2 = MusicbuttonDivY2 + MusicbuttonDivHeight2 * 1/2;
-  float recordsymbolDivWidth3 = MusicbuttonDivWidth3 /2  ;
-  float recordsymbolDivHeight4 = MusicbuttonDivHeight3 /2  ;
+  float recordsymbol5DivX1 = MusicbuttonDivX5 + MusicbuttonDivWidth5* 1/2;
+  float recordsymbol5DivY2 = MusicbuttonDivY5 + MusicbuttonDivHeight5 * 1/2;
+  float recordsymbol5DivWidth3 = MusicbuttonDivWidth5 /2  ;
+  float recordsymbol5DivHeight4 = MusicbuttonDivHeight5 /2  ;
 
   rect(MusicbuttonDivX1, MusicbuttonDivY2, MusicbuttonDivWidth3, MusicbuttonDivHeight4);
   triangle(playSymbol1DivX1, playSymbol1DivY2, playSymbol1DivX3, playSymbol1DivY4, playSymbol1DivX5, playSymbol1DivY6);
   rect( startsymbol2DivX1, startsymbol2DivY2, startsymbol2DivWidth3, startsymbol2DivHeight4 );
 
-  triangle(stopsymbol4DivX1, stopsymbol4DivY2, stopsymbol4DivX3, stopsymbol4DivY4, stopsymbol4DivX5, stopsymbol4DivY6);
-  triangle(stopsymbol4DivX1, stopsymbol4DivY2, stopsymbol4DivX3, stopsymbol4DivY4,stopsymbol4DivX5, stopsymbol4DivY6);
+  triangle(stopsymbol3DivX1, stopsymbol3DivY2, stopsymbol3DivX3, stopsymbol3DivY4, stopsymbol3DivX5, stopsymbol3DivY6);
+  triangle(stopsymbol6DivX1, stopsymbol6DivY2, stopsymbol6DivX3, stopsymbol6DivY4, stopsymbol6DivX5, stopsymbol6DivY6);
 
-  ellipse( mutesymbolDivX1, mutesymbolDivY2, mutesymbolDivWidth3, mutesymbolDivHeight4);
-  ellipse( recordsymbolDivX1, recordsymbolDivY2, recordsymbolDivWidth3, recordsymbolDivHeight4);
+  ellipse( mutesymbol4DivX1, mutesymbol4DivY2, mutesymbol4DivWidth3, mutesymbol4DivHeight4);
+  ellipse( recordsymbol5DivX1, recordsymbol5DivY2, recordsymbol5DivWidth3, recordsymbol5DivHeight4);
+
+
+  /* Text, Simple ... Hardcoded;
+   */
+  //
+  //
+  // Display
+
+  //
+  // Population: DIVs
+  int numberOfButtons = 5; //Half a button on either side as space, Center Button is Play
+  int widthOfButton = appWidth/numberOfButtons;
+  int beginningButtonSpace = widthOfButton;
+  //
+
+  //
+  float songTitleDivX1= appWidth * 1.5 / 11;
+  float songTitleDivY2= appHeight * 1.5 / 13;
+  float songTitleDivWidth3 = appWidth * 3 / 11 ;
+  float songTitleDivHeight4 = appHeight * 1 / 13 ;
+  float QuickbuttonDivX1 = appWidth * 0.0  / 11 ;
+  float QuickbuttonDivY2 = appHeight  * 0.0 / 13 ;
+  float QuickbuttonDivWidth3 = appWidth  * 0.5  / 11 ;
+  float QuickbuttonDivHeight4 = appHeight * 0.4 / 12;
+  float messageDIV_X = appWidth*5/8 + beginningButtonSpace*13/16;
+  float messageDIV_Y = songTitleDivY;
+  float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
+  float messageDIV_Height = appHeight*9/20;
+  //
+  // DIVs
+  rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+  //rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
+  rect( messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
+  //
+  //Strings, Text, Literal
+  String Title = " Thunder";
+  /* Full String longer than Rectangle, "Thunder" I changed 2D Size."
+   - divHeight must fit the font size or text is not shown (Advanced, error check includes %-decrease)
+   - Fonts includes the in WHITE SPACE around the foreground "coloured ink"
+   - divWidth must include the font size
+   - if font is too big, wrap around happens
+   - OR full string is not drawn
+   */
+
+  /* Fonts from OS
+   println ("start of Cansole");// ERROR: in case CONSOLE Memory not enough;
+   String[] fontlist = PFont.List(); // TO list all fonts to choose, then createFont
+   printlnArray( fontlist );// For listing all possible fonts to choose , then createfont
+   //Spelling counts and  and must comapare CONSOLE v Tools / create Font / create  font Spelling
+   //Tools / create Font / find  font / Do Not press "OK", known  conflict  between LoadFont() and createFont()
+   */
+
+
+
+
+  // students  enter all the text from the case study
+  //
+  // Fonts from OS
+  float fontSize1 = songTitleDivHeight; //Entire Program, Algorithm to have smallest font size
+  float fontSize2 = appHeight; //Entire Program, Algorithm to have smallest font size
+  float fontSize3 = appHeight; //Entire Program, Algorithm to have smallest font size
+  //println( fontSize );
+  PFont font; //font Varaible Name, able to have more than one Font
+  String harrington = "Harrington"; //Spelling of the Font Matters, see PFont.list() v Create Font above
+  font = createFont(harrington, fontSize1);
+
+  //println (fontSize);
+
+  //
+  // Drawing Test
+  color RedInk = #E82A2A; // AP Minilesson  in bit , 8-bit or byte ( gray scale 255
+  color whiteInk=   #FFFFFF; // grey scale is 255
+  color  resetInk  = whiteInk;
+  fill(RedInk);// Ink  Hexidecimal copied from the color selector
+  // Grey scale 0-255
+  textFont(font, fontSize1);
+  //text( Title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+  textAlign( CENTER, BASELINE);// Align, X&Y, See processing. org / reference
+  // Values:[ LEFT|CENTRE|Right]& [Top|CENTER| BUTTOM| BASELINE];
+  textFont(font, fontSize1); //must include textSize() before text() & textWidth()
+  //Note: drawing text after height dimension solved
+  //WHILE solves length dimension
+  //Additional docing required to adjust consistent text size for meaning in app
+  float constantDecrease = 0.99;
+  int iWhile=0;
+  textAlign (LEFT, CENTER);
+  while (textWidth(Title) > songTitleDivWidth) {
+    //println("While #1"); //Demon Infinite LOOP
+    iWhile++;
+    if ( iWhile>1000 ) {
+      println("Infninte WHILE Loop");
+      exit();
+    }
+    fontSize1 *= constantDecrease;
+    textFont(font, fontSize1);
+  }
+  text( Title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+  textFont(font, fontSize2); //must include textSize() before text() & textWidth()
+  iWhile=0;
+  while (textWidth(Title) > messageDIV_Width) {
+    //println("While #1"); //Demon Infinite LOOP
+    iWhile++;
+    if ( iWhile>1000 ) {
+      println("Infninte WHILE Loop");
+      exit();
+    }
+    fontSize2 *= constantDecrease;
+    textFont(font, fontSize2);
+  }
+  text( Title, messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
+  textFont(font, fontSize3); //must include textSize() before text() & textWidth()
+  iWhile=0;
+  while (textWidth(Title) > QuickbuttonDivWidth) {
+    //println("While #1"); //Demon Infinite LOOP
+    iWhile++;
+    if ( iWhile>1000 ) {
+      println("Infninte WHILE Loop");
+      exit();
+    }
+    fontSize3 *= constantDecrease;
+    textFont(font, fontSize3);
+  }
+  text( Title, QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight );
+  fill(resetInk);
+  //
+  String upArow = "..";
+  String dependenciesFolder = "dependencies";
+  String imagesFolder = "Images";
+  String imageName1 = "Taylor_Swift_at_the_2023_MTV_Video_Music_Awards_(3)";
+  String imageName2 = "Clock";
+  String imageName3 = "Table";
+  String fileExtension1 = ".png";
+  String open = "/";
+  //
+  //
+  //Concatenation
+  //Note, Cut Out, See Absolute Pathway:
+  //See Relative Pathway: Dependencies\Images
+  String imageDirectory = upArow + open + dependenciesFolder + open + imagesFolder + open;
+  String pathway1 = imageDirectory + imageName1 + fileExtension1;
+  //String pathway2 = imageDirectory + imageName2 + fileExtension;
+  //String pathway3 = imageDirectory + imageName3 + fileExtension;
+  //println(pathway);
+  //
+  PImage image1 = loadImage( pathway1 );
+  //PImage image2 = loadImage( pathway2 );
+  int imageDivWidth2 = 679;
+  int imageDivHeight2 = 679;
+  //PImage image3 = loadImage( pathway3 );
+  //
+  //Population: DIVs
+  float imageDivX = beginningButtonSpace;
+  float imageDivY= appHeight * 4.1 / 13;
+  float imageDivWidth = appWidth *  7 / 11  - beginningButtonSpace*1.5;
+  float imageDivHeight = appHeight * 6.5 / 13;
+  //
+  //Image: Aspect Ratio Algorithm for any Image
+  float image2AspectRation_GreatOne = ( imageDivWidth2 > imageDivHeight2 ) ? float(imageDivWidth2) / float(imageDivHeight2) : float(imageDivHeight2) / float(imageDivWidth2 ) ;
+  float imageDivWidthAdjusted2 = imageDivWidth;
+  float imageDivHeightAdjusted1;
+  if ( imageDivWidth2 >= imageDivWidth ) {
+    imageDivHeightAdjusted1 = imageDivWidthAdjusted2 / image2AspectRation_GreatOne;
+    while ( imageDivHeightAdjusted1 > imageDivHeight ) {
+      imageDivWidthAdjusted2 *= 0.99;
+      imageDivHeightAdjusted1 = imageDivWidthAdjusted2 / image2AspectRation_GreatOne ; //CHANGE THIS
+    }//End WHILE
+  } else {
+    imageDivHeightAdjusted1 = imageDivWidthAdjusted2 * image2AspectRation_GreatOne;
+    while ( imageDivHeightAdjusted1 > imageDivHeight ) {
+      imageDivWidthAdjusted2 *= 0.99;
+      imageDivHeightAdjusted1 = imageDivWidthAdjusted2 * image2AspectRation_GreatOne ; //CHANGE THIS
+    }//End WHILE
+  }
+
+
+  //println( float(imageWidth2)/ float(imageHeight2) );
+  //Ternary Operator for As[pect Ratio: Q: greatOne v lessOne
+
+  println("Verify Image Aspect Ratio Greater than One:", image2AspectRation_GreatOne>=1, "\tActual Number:", image2AspectRation_GreatOne);
+
+  println("Comparison of imageHeight2 and divHeight:", imageDivHeight2, imageDivHeight);
+
+  println("imageDivHeightAdjusted1", imageDivHeightAdjusted1);
+  println("Question: is this too big?", "\t\thint ... reposition image() above rect(div)");
+  // WHILE LOOP: decrease imageWidth to decrease the calculated imageHeight (% decrease within mutliplication assignment operator)
+
+  //
+  //CAUTION: might need to reposition rect(div) with image()
+  //image(image2, imageDivX, imageDivY, imageWidthAdjusted2, imageHeightAdjusted1);
+  //DIV: Image
+  rect(imageDivX, imageDivY, imageDivWidth, imageDivHeight);
+  //
+  //image(image1, 0, 0);
+  image(image1, imageDivX, imageDivY, imageDivWidthAdjusted2, imageDivHeightAdjusted1);
+  //image(image3, 0, 0);
 }//End Setup
 //
 //

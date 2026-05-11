@@ -18,6 +18,11 @@ int currentSong = numberOfSongs - numberOfSongs;// ZEERO, Math Property
 //
 float songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight;
 color RedInk, resetInk;
+
+float constantDecrease;
+int iWhile;
+float fontSize1, fontSize2, fontSize3;
+PFont font; 
 //
 void setup() {
   //Display
@@ -32,16 +37,16 @@ void setup() {
   int numberOfButtons = 5; //Half a button on either side as space, Center Button is Play
   int widthOfButton = appWidth/numberOfButtons;
   int beginningButtonSpace = widthOfButton;
-  songTitleDivX= appWidth * 1.5 / 11;
-  songTitleDivY= appHeight * 1.5 / 13;
-  songTitleDivWidth = appWidth * 3 / 11 ;
-  songTitleDivHeight = appHeight * 1 / 13 ;
+  float songTitleDivX1= appWidth * 1.5 / 11;
+  float songTitleDivY2= appHeight * 1.5 / 13;
+  float songTitleDivWidth3 = appWidth * 3 / 11 ;
+  float songTitleDivHeight4 = appHeight * 1 / 13 ;
   float QuickbuttonDivX = appWidth * 0.0  / 11 ;
-  float QuickbuttonDivY = appHeight  * 0.0 / 13 ;
+  float QuickbuttonDivY= appHeight  * 0.0 / 13 ;
   float QuickbuttonDivWidth = appWidth  * 0.5  / 11 ;
   float QuickbuttonDivHeight = appHeight * 0.4 / 12;
-  float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
-  float messageDIV_Y = appHeight*4/20;
+  float messageDIV_X = appWidth*5/8 + beginningButtonSpace*13/16;
+  float messageDIV_Y = songTitleDivY;
   float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
   float messageDIV_Height = appHeight*9/20;
 
@@ -151,7 +156,7 @@ void setup() {
   float constantDecrease = 0.99;
   int iWhile=0;
   textFont(font, fontSize1); //must include textSize() before text() & textWidth()
-  while (TextWidth(playListMetaData[currentSong].fileName()) > songTitleDivWidth ) {
+  while (textWidth(playListMetaData[currentSong].fileName()) > songTitleDivWidth ) {
     println("Help ? Troubleshooting");
     //println("While #1"); //Infinite WHILE Check
     iWhile++;
