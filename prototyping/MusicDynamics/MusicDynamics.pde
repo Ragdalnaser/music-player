@@ -18,11 +18,10 @@ int currentSong = numberOfSongs - numberOfSongs;// ZEERO, Math Property
 //
 float songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight;
 color RedInk, resetInk;
-
 float constantDecrease;
 int iWhile;
 float fontSize1, fontSize2, fontSize3;
-PFont font; 
+PFont font;
 //
 void setup() {
   //Display
@@ -31,36 +30,46 @@ void setup() {
   int appHeight = height;
   //
   float paperWidth = 11.0;
-  float paperHeight = 13.0 ;
+float paperHeight = 13.0 ;
 
-  //Population: DIVs
-  int numberOfButtons = 5; //Half a button on either side as space, Center Button is Play
-  int widthOfButton = appWidth/numberOfButtons;
-  int beginningButtonSpace = widthOfButton;
-  float songTitleDivX1= appWidth * 1.5 / 11;
-  float songTitleDivY2= appHeight * 1.5 / 13;
-  float songTitleDivWidth3 = appWidth * 3 / 11 ;
-  float songTitleDivHeight4 = appHeight * 1 / 13 ;
-  float QuickbuttonDivX = appWidth * 0.0  / 11 ;
-  float QuickbuttonDivY= appHeight  * 0.0 / 13 ;
-  float QuickbuttonDivWidth = appWidth  * 0.5  / 11 ;
-  float QuickbuttonDivHeight = appHeight * 0.4 / 12;
-  float messageDIV_X = appWidth*5/8 + beginningButtonSpace*13/16;
-  float messageDIV_Y = songTitleDivY;
-  float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
-  float messageDIV_Height = appHeight*9/20;
+  // Population: DIVs
+int numberOfButtons = 5; //Half a button on either side as space, Center Button is Play
+int widthOfButton = appWidth/numberOfButtons;
+int beginningButtonSpace = widthOfButton;
+float songTitleDivX= appWidth * 1.5 / 11;
+float songTitleDivY= appHeight * 1.5 / 13;
+float songTitleDivWidth = appWidth * 3 / 11 ;
+float songTitleDivHeight = appHeight * 1 / 13 ;
+float QuickbuttonDivX = appWidth * 0.0  / 11 ;
+float QuickbuttonDivY = appHeight  * 0.0 / 13 ;
+float QuickbuttonDivWidth = appWidth  * 0.5  / 11 ;
+float QuickbuttonDivHeight = appHeight * 0.4 / 12;
+float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
+float messageDIV_Y = appHeight*4/20;
+float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
+float messageDIV_Height = appHeight*9/20;
+  
+ 
 
-  // DIVs
-  rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-  rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
-  rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
+  //   Fonts from OS
+  println ("start of Cansole");// ERROR: in case CONSOLE Memory not enough;
+  String[] fontlist = PFont.list(); // TO list all fonts to choose, then createFont
+  printArray( fontlist );// For listing all possible fonts to choose , then createfont
+  //Spelling counts and  and must comapare CONSOLE v Tools / create Font / create  font Spelling
+  //Tools / create Font / find  font / Do Not press "OK", known  conflict  between LoadFont() and createFont()
 
-
-
-
-
-
-
+  // Students enter all text from Case Study
+  String x = "X";
+  //
+  // Fonts from OS
+  //rect(height) is biggest font is word is the smallest
+  float fontSize1 = songTitleDivHeight; //1:1 Font Height to rectHeight
+  //float fontSize2 = messageDIV_Height;
+  //float fontSize3 = QuickbuttonDivHeight;
+  //PFont font; //Font Varaible Name, able to have more than one Font
+  String Segoe_Print = "Segoe Print"; //Spelling of the Font Matters, see PFont.list() v Create Font above
+  font = createFont(Segoe_Print, fontSize1);
+  //
   //Music Loading - Structured Review
   minim = new Minim(this); //Mandatory;
   String upArrow= "..";
@@ -69,10 +78,13 @@ void setup() {
   String SoundEffectFolder = "SoundEffect"; //Developer Specific
   String dependenciesFolder = "dependencies"; //Developer Specific
   String SoundEffect1 = "Spring_Attic_Door";
-
+  String fileExtension_mp3 = ".mp3";
   //
-
-
+  /* Alternate Song Name Text
+   String songName1 = "Newsroom";
+   String songName2 = "Start_Your_Engines";
+   String songName3 = "Ghost_Walk";
+   */
   String[] songName = new String[numberOfSongs];
   songName[currentSong] = "Ghost Walk" ;
   currentSong++;
@@ -80,16 +92,6 @@ void setup() {
   currentSong++;
   songName[currentSong]="Start_Your_Engines";
   currentSong=0;
-  //
-
-  /* Alternate Song Name Text
-   String songName1 = "Newsroom";
-   String songName2 = "Start_Your_Engines";
-   String songName3 = "Ghost_Walk";
-   
-   */
-  String fileExtension_mp3 = ".mp3";
-
   //
   //CAUTION: Mistakes Below
   String musicDirectory=  upArrow + open + upArrow + open + dependenciesFolder + open + musicFolder + open;//Concatenation
@@ -120,29 +122,13 @@ void setup() {
     printArray(SoundEffect);
     exit();
   }
-
-  /* Fonts from OS
-   println ("start of Cansole");// ERROR: in case CONSOLE Memory not enough;
-   String[] fontlist = PFont.List(); // TO list all fonts to choose, then createFont
-   printlnArray( fontlist );// For listing all possible fonts to choose , then createfont
-   //Spelling counts and  and must comapare CONSOLE v Tools / create Font / create  font Spelling
-   //Tools / create Font / find  font / Do Not press "OK", known  conflict  between LoadFont() and createFont()
-   */
-
-  // Students enter all text from Case Study
-  String x = "X";
   //
-  // Fonts from OS
-  //rect(height) is biggest font is word is the smallest
-  float fontSize1 = songTitleDivHeight; //1:1 Font Height to rectHeight
-  float fontSize2 = messageDIV_Height;
-  float fontSize3 = QuickbuttonDivHeight;
-  PFont font; //Font Varaible Name, able to have more than one Font
-  String harrington = "Harrington"; //Spelling of the Font Matters, see PFont.list() v Create Font above
-  font = createFont(harrington, fontSize1);
+  // DIVs
+  rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+  //rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
+  //rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
   //
-
-  // Drawing Test
+  // Drawing Text
   color RedInk = #E82A2A; // AP Minilesson  in bit , 8-bit or byte ( gray scale 255
   color whiteInk=   #FFFFFF; // grey scale is 255
   fill(RedInk);// Ink  Hexidecimal copied from the color selector
