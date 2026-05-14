@@ -117,7 +117,7 @@ float messageDIV_Height = appHeight*9/20;
       exit();
     }
   }
-  if ( SoundEffect[currentSong]==null ) { //ERROR, play list is NULL
+  if ( SoundEffect[currentSong]== null ) { //ERROR, play list is NULL
     println("The Sound Effects did not load properly");
     printArray(SoundEffect);
     exit();
