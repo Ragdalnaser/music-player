@@ -7,28 +7,29 @@ int appWidth = displayWidth;
 int appHeight = displayHeight;
 //
 // Population: DIVs
-int numberOfButtons = 5;  // Half a button on either side as space, centre button is Play
-int widthOfButtons = appWidth/numberOfButtons;
-int beginningButtonSpace = widthOfButton;
-float quitX = appWidth - appHeight* 0.5/20;
-float quitY = 0;
-float quitWidth = appHeight* 0.5/20;
-float quitHeight = appHeight* 0.5/20;
-float songTitleDivX = beginningButtonSpace;
-float songTitleDivY= appHeight* 1.5/20;
-float songTitleDivWidth = appWidth * 6  - beginningButtonSpace* 1.5/20;
-float songTitleDivHeight = appHeight * 1/10;
-float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
-float messageDIV_Y = appHeight*1.5/20;
-float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
-float messageDIV_Height = appHeight*9/20;
+  int numberOfButtons = 5; //Half a button on either side as space, Center Button is Play
+  int widthOfButton = appWidth/numberOfButtons;
+  int beginningButtonSpace = widthOfButton;
+  //
 
-
-//
-// DIVs: Image
-rect(quitX, quitY, quitWidth, quitHeight);
-rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
+  //
+  float songTitleDivX1= appWidth * 1.5 / 11;
+  float songTitleDivY2= appHeight * 1.5 / 13;
+  float songTitleDivWidth3 = appWidth * 3 / 11 ;
+  float songTitleDivHeight4 = appHeight * 1 / 13 ;
+  float QuickbuttonDivX1 = appWidth * 0.0  / 11 ;
+  float QuickbuttonDivY2 = appHeight  * 0.0 / 13 ;
+  float QuickbuttonDivWidth3 = appWidth  * 0.5  / 11 ;
+  float QuickbuttonDivHeight4 = appHeight * 0.4 / 12;
+  float messageDIV_X = appWidth*5/8 + beginningButtonSpace*13/16;
+  float messageDIV_Y = songTitleDivY;
+  float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
+  float messageDIV_Height = appHeight*9/20;
+  //
+  // DIVs
+  rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+  //rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
+  rect( messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
 
 //
 //Strings, Text, Literal
@@ -51,7 +52,7 @@ String Title = " Thunder";
  // students  enter all the text from the case study
  //
  // Fonts from OS
- float fontSize1 = appHeight;// Entire program , algorithm to have smallest font size
+ float fontSize = appHeight;// Entire program , algorithm to have smallest font size
  println (fontSize);
  PFont font ;// Font varible  Name, able  to have more  than one Font
  String  harrigton = "Harrigton";// Spelling  of the Font  Matters,  see PFont, list() v Create Font  above
@@ -59,22 +60,22 @@ String Title = " Thunder";
  //
  // Aspect  Ratio for harrigton
  float FontSizeharrigton = 83; // Default  Fontize  for -100%
- float divHeightHarrigton  = SongTitleDivWidth;// key value, value = 6 
+ float divHeightHarrigton  = songTitleDivHeight;// key value, value = 6 
  float harrigtonAspectRatio = fontSize / divHeightHarrigton;// #<1;
  float TextAdjustment = 0.9;
-fontSize1 = songTitleDivHeight* harrigtonAspectRatio* textAdjustment;
+fontSize = songTitleDivHeight* harrigtonAspectRatio* TextAdjustment;
 //fontSize2 = songTitleDivHeight* harrigtonAspectRatio* textAdjustment;
 //println (fontSize);
  
  //
  // Drawing Test
- color RedInk = ##E82A2A; // AP mMinilesson  in bit , 8-bit or byte ( gray scale 255
- color whiteInk= # FFFFFF; // grey scale is 255
+ color RedInk = #E82A2A; // AP mMinilesson  in bit , 8-bit or byte ( gray scale 255
+ color whiteInk= #FFFFFF; // grey scale is 255
  color  resetInk  = whiteInk;
  fill(RedInk);// Ink  Hexidecimal copied from the color selector
  // Grey  scale 0-255
  textFont(font, fontSize);
- text( title, songTitleDivX, songTitleDivY, songTitleWidth, songTilteDivHeight);
+ text( Title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTilteDivHeight);
  TextAlign( CENTER, Baseline);// Align, X&Y, See processing. org / reference
 // Values:[ LEFT|CENTRE|Right]& [Top|CENTER| BUTTOM| BASELINE];
 textFont(font, fontSize); //must include textSize() before text() & textWidth()
