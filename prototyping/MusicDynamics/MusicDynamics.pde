@@ -30,31 +30,32 @@ void setup() {
   int appHeight = height;
   //
   float paperWidth = 11.0;
-float paperHeight = 13.0 ;
+  float paperHeight = 13.0 ;
 
   // Population: DIVs
-int numberOfButtons = 5; //Half a button on either side as space, Center Button is Play
-int widthOfButton = appWidth/numberOfButtons;
-int beginningButtonSpace = widthOfButton;
-float songTitleDivX= appWidth * 1.5 / 11;
-float songTitleDivY= appHeight * 1.5 / 13;
-float songTitleDivWidth = appWidth * 3 / 11 ;
-float songTitleDivHeight = appHeight * 1 / 13 ;
-float QuickbuttonDivX = appWidth * 0.0  / 11 ;
-float QuickbuttonDivY = appHeight  * 0.0 / 13 ;
-float QuickbuttonDivWidth = appWidth  * 0.5  / 11 ;
-float QuickbuttonDivHeight = appHeight * 0.4 / 13;
-float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
-float messageDIV_Y = appHeight*4/20;
-float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
-float messageDIV_Height = appHeight*9/20;
-  
- 
+  int numberOfButtons = 5; //Half a button on either side as space, Center Button is Play
+  int widthOfButton = appWidth/numberOfButtons;
+  int beginningButtonSpace = widthOfButton;
+  float songTitleDivX= appWidth * 1.5 / 11;
+  float songTitleDivY= appHeight * 1.5 / 13;
+  float songTitleDivWidth = appWidth * 3 / 11 ;
+  float songTitleDivHeight = appHeight * 1 / 13 ;
+  float QuickbuttonDivX = appWidth * 0.0  / 11 ;
+  float QuickbuttonDivY = appHeight  * 0.0 / 13 ;
+  float QuickbuttonDivWidth = appWidth  * 0.5  / 11 ;
+  float QuickbuttonDivHeight = appHeight * 0.4 / 13;
+  float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
+  float messageDIV_Y = appHeight*4/20;
+  float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
+  float messageDIV_Height = appHeight*9/20;
 
-  //   Fonts from OS
-  println ("start of Cansole");// ERROR: in case CONSOLE Memory not enough;
-  String[] fontlist = PFont.list(); // TO list all fonts to choose, then createFont
-  printArray( fontlist );// For listing all possible fonts to choose , then createfont
+
+
+  /*   Fonts from OS
+   println ("start of Cansole");// ERROR: in case CONSOLE Memory not enough;
+   String[] fontlist = PFont.list(); // TO list all fonts to choose, then createFont
+   printArray( fontlist );// For listing all possible fonts to choose , then createfont
+   */
   //Spelling counts and  and must comapare CONSOLE v Tools / create Font / create  font Spelling
   //Tools / create Font / find  font / Do Not press "OK", known  conflict  between LoadFont() and createFont()
 
@@ -100,15 +101,10 @@ float messageDIV_Height = appHeight*9/20;
   for ( int i=0; i<numberOfSongs; i++ ) {
     //CAUTION: removed ReadMe.txt
     pathway = musicDirectory + songName[i] + fileExtension_mp3; //TO BE Rewritten and deleted once file is LOADED
-    println("Insde FOR, pathway:", pathway);
     playList[ i ] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
-
+    playListMetaData[ i ] = playList[ i ].getMetaData();
     //CAUTION: not currentSong var
-    println(currentSong);
   }
-  pathway = SoundEffect1Directory + SoundEffect1 + fileExtension_mp3; //Rewritting FILE
-  playList[currentSong] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
-  //
   for ( int i=0; i<numberOfSongs; i++ ) {
     if ( playList[i]==null ) { //ERROR, play list is NULL
       //See FILE or minim.loadFile
@@ -117,6 +113,9 @@ float messageDIV_Height = appHeight*9/20;
       exit();
     }
   }
+  pathway = SoundEffect1Directory + SoundEffect1 + fileExtension_mp3;
+  SoundEffect[currentSong] = minim.loadFile(pathway);
+
   if ( SoundEffect[currentSong]== null ) { //ERROR, play list is NULL
     println("The Sound Effects did not load properly");
     printArray(SoundEffect);
@@ -129,7 +128,7 @@ float messageDIV_Height = appHeight*9/20;
   //rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
   //
   // Drawing Text
-  color RedInk = #E82A2A; // AP Minilesson  in bit , 8-bit or byte ( gray scale 255
+  RedInk = #E82A2A; // AP Minilesson  in bit , 8-bit or byte ( gray scale 255
   color whiteInk=   #FFFFFF; // grey scale is 255
   fill(RedInk);// Ink  Hexidecimal copied from the color selector
   // Grey scale 0-255
@@ -142,17 +141,17 @@ float messageDIV_Height = appHeight*9/20;
   float constantDecrease = 0.99;
   int iWhile=0;
   textFont(font, fontSize1); //must include textSize() before text() & textWidth()
-  while (textWidth(playListMetaData[currentSong].fileName()) > songTitleDivWidth ) {
-    println("Help ? Troubleshooting");
-    //println("While #1"); //Infinite WHILE Check
-    iWhile++;
-    if ( iWhile>10000 ) { //>1000 means -1 text or i
-      println("Infninte WHILE Loop");
-      exit();
-    }
-    fontSize1 *= constantDecrease;
-    textFont(font, fontSize1);
+
+  println("Help ? Troubleshooting");
+  //println("While #1"); //Infinite WHILE Check
+  iWhile++;
+  if ( iWhile>10000 ) { //>1000 means -1 text or i
+    println("Infninte WHILE Loop");
+    exit();
   }
+  fontSize1 *= constantDecrease;
+  textFont(font, fontSize1);
+
   text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
   fill(resetInk);
   //
@@ -163,13 +162,15 @@ float messageDIV_Height = appHeight*9/20;
 //End Setup
 //
 void draw() {
+  /*
   if (!playList[currentSong].isPlaying()) {
-    playList[currentSong].play();
-  }
-  rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-  fill(RedInk);
-  text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
-  fill(#FFFFFF);// resetInk
+   playList[currentSong].play();
+   }
+   rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+   fill(RedInk);
+   text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+   fill(#FFFFFF);// resetInk
+   */
 }//End Draw
 //
 void mousePressed() {
