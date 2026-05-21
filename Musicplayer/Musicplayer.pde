@@ -12,6 +12,8 @@ import ddf.minim.ugens.*;
 //
 //Glbal Varibles
 //
+float QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight;
+float playsymobolDivX, playsymboldivY,playsymbolDiv 
 void setup() {
   //Display
   //fullScreen
@@ -32,10 +34,10 @@ void setup() {
   float songTitleDivWidth = appWidth * 6 / paperWidth ;
   float songTitleDivHeight = appHeight * 1 / paperHeight ;
 
-  float QuickbuttonDivX = appWidth * 0.0  / paperWidth ;
-  float QuickbuttonDivY = appHeight  * 0.0 / paperHeight ;
-  float QuickbuttonDivWidth = appWidth  * 0.5  / paperWidth ;
-  float QuickbuttonDivHeight = appHeight * 0.4 / paperHeight;
+  QuickbuttonDivX = appWidth * 0.0  / paperWidth ;
+  QuickbuttonDivY = appHeight  * 0.0 / paperHeight ;
+  QuickbuttonDivWidth = appWidth  * 0.5  / paperWidth ;
+  QuickbuttonDivHeight = appHeight * 0.4 / paperHeight;
 
   float outerboxDivX = appWidth * 1.5 / paperWidth;
   float outerboxDivY = appHeight * 4.9 / paperHeight;
@@ -338,6 +340,8 @@ void draw() {
 }//End Draw
 //
 void mousePressed() {
+  if ( mouseX>playDivX && mouseX<playDivX+playDivWidth && mouseY>playDivY && mouseY<playDivY+playDivHeight ) {
+  }
 }//End mouse Pressed
 //
 void keyPressed() {
