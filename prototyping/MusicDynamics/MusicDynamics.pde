@@ -124,8 +124,8 @@ void setup() {
   //
   // DIVs
   rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-  //rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
-  //rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
+  rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
+  rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
   //
   // Drawing Text
   RedInk = #E82A2A; // AP Minilesson  in bit , 8-bit or byte ( gray scale 255
