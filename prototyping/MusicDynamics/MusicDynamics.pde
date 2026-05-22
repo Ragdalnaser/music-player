@@ -64,7 +64,7 @@ void setup() {
   //
   // Fonts from OS
   //rect(height) is biggest font is word is the smallest
-  float fontSize1 = songTitleDivHeight; //1:1 Font Height to rectHeight
+  float fontSize1 = songTitleDivHeight * 0.9; //1:1 Font Height to rectHeight
   //float fontSize2 = messageDIV_Height;
   //float fontSize3 = QuickbuttonDivHeight;
   //PFont font; //Font Varaible Name, able to have more than one Font
@@ -133,7 +133,6 @@ void setup() {
   fill(RedInk);// Ink  Hexidecimal copied from the color selector
   // Grey scale 0-255
   textFont(font, fontSize1);
-  text( x, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
   textAlign( LEFT, CENTER);// Align, X&Y, See processing. org / reference
   // Values:[ LEFT|CENTRE|Right]& [Top|CENTER| BOTTOM| BASELINE];
 
@@ -141,17 +140,21 @@ void setup() {
   float constantDecrease = 0.99;
   int iWhile=0;
   textFont(font, fontSize1); //must include textSize() before text() & textWidth()
-
-  println("Help ? Troubleshooting");
-  //println("While #1"); //Infinite WHILE Check
-  iWhile++;
-  if ( iWhile>10000 ) { //>1000 means -1 text or i
-    println("Infninte WHILE Loop");
-    exit();
+  while ( textWidth(playListMetaData[currentSong].title()) > songTitleDivWidth ) {
+    //println("While #1"); //Infinite WHILE Check
+    iWhile++;
+    if ( iWhile>10000 ) { //>1000 means -1 text or i
+      println("Infninte WHILE Loop");
+      exit();
+    }
+    fontSize1 *= constantDecrease;
+    textFont(font, fontSize1);
   }
-  fontSize1 *= constantDecrease;
-  textFont(font, fontSize1);
+  text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+  fill(resetInk);
 
+ 
+  text( x, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
   text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
   fill(resetInk);
   //
