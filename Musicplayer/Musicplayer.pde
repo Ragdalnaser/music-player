@@ -13,7 +13,17 @@ import ddf.minim.ugens.*;
 //Glbal Varibles
 //
 float QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight;
-float playsymobolDivX, playsymboldivY,playsymbolDiv 
+float playsymbol1DivX1, playsymbol1DivY2, playsymbol1DivX3, playsymbol1DivY4, playsymbol1DivX5, playsymbol1DivY6;
+float startsymbol2DivX1, startsymbol2DivY2, startsymbol2DivWidth3, startsymbol2DivHeight4;
+float Nextsymbol3DivX1, Nextsymbol3DivY2, Nextsymbol3DivX3, Nextsymbol3DivY4, Nextsymbol3DivX5, Nextsymbol3DivY6;
+float Nextsymbol6DivX1, Nextsymbol6DivY2, Nextsymbol6DivX3, Nextsymbol6DivY4, Nextsymbol6DivX5, Nextsymbol6DivY6;
+float mutesymbol4DivX1, mutesymbol4DivY2, mutesymbol4DivWidth3, mutesymbol4DivHeight4;
+float recordsymbol5DivX1, recordsymbol5DivY2, recordsymbol5DivWidth3, recordsymbol5DivHeight4;
+Float MusicbuttonDivX1, MusicbuttonDivY1, MusicbuttonDivWidth1, MusicbuttonDivHeight1;
+float MusicbuttonDivX2, MusicbuttonDivY2, MusicbuttonDivWidth2, MusicbuttonDivHeight2;
+float MusicbuttonDivX3, MusicbuttonDivY3, MusicbuttonDivWidth3, MusicbuttonDivHeight3;
+float MusicbuttonDivX4, MusicbuttonDivY4, MusicbuttonDivWidth4, MusicbuttonDivHeight4;
+float MusicbuttonDivX5, MusicbuttonDivY5, MusicbuttonDivWidth5, MusicbuttonDivHeight5;
 void setup() {
   //Display
   //fullScreen
@@ -44,31 +54,31 @@ void setup() {
   float outerboxDivWidth = appWidth * 11 / paperWidth;
   float outerboxDivHeight = appHeight * 13  / paperHeight;
 
-  float MusicbuttonDivX1 = appWidth  * 1.5 / paperWidth;
-  float MusicbuttonDivY1 = appHeight * 11.5 / paperHeight;
-  float MusicbuttonDivWidth1 = appWidth * 1 / paperWidth;
-  float MusicbuttonDivHeight1 = appHeight * 0.8 / paperHeight;
+  MusicbuttonDivX1 = appWidth  * 1.5 / paperWidth;
+  MusicbuttonDivY1 = appHeight * 11.5 / paperHeight;
+  MusicbuttonDivWidth1 = appWidth * 1 / paperWidth;
+  MusicbuttonDivHeight1 = appHeight * 0.8 / paperHeight;
 
-  float MusicbuttonDivX2 = appWidth  * 2.5 / paperWidth;
-  float MusicbuttonDivY2 = appHeight * 11.5 / paperHeight;
-  float MusicbuttonDivWidth2 = appWidth * 1 / paperWidth;
-  float MusicbuttonDivHeight2 = appHeight * 0.8 / paperHeight;
+  MusicbuttonDivX2 = appWidth  * 2.5 / paperWidth;
+  MusicbuttonDivY2 = appHeight * 11.5 / paperHeight;
+  MusicbuttonDivWidth2 = appWidth * 1 / paperWidth;
+  MusicbuttonDivHeight2 = appHeight * 0.8 / paperHeight;
 
-  float MusicbuttonDivX3 = appWidth  * 3.5 / paperWidth;
-  float MusicbuttonDivY3 = appHeight * 11.5 / paperHeight;
-  float MusicbuttonDivWidth3 = appWidth * 1 / paperWidth;
-  float MusicbuttonDivHeight3 = appHeight * 0.8 / paperHeight;
+  MusicbuttonDivX3 = appWidth  * 3.5 / paperWidth;
+  MusicbuttonDivY3 = appHeight * 11.5 / paperHeight;
+  MusicbuttonDivWidth3 = appWidth * 1 / paperWidth;
+  MusicbuttonDivHeight3 = appHeight * 0.8 / paperHeight;
 
-  float MusicbuttonDivX4 = appWidth  * 4.5 / paperWidth;
-  float MusicbuttonDivY4 = appHeight * 11.5 / paperHeight;
-  float MusicbuttonDivWidth4= appWidth * 1 / paperWidth;
-  float MusicbuttonDivHeight4 = appHeight * 0.8 / paperHeight;
+  MusicbuttonDivX4 = appWidth  * 4.5 / paperWidth;
+  MusicbuttonDivY4 = appHeight * 11.5 / paperHeight;
+  MusicbuttonDivWidth4= appWidth * 1 / paperWidth;
+  MusicbuttonDivHeight4 = appHeight * 0.8 / paperHeight;
 
 
-  float MusicbuttonDivX5 = appWidth  * 5.5 / paperWidth;
-  float MusicbuttonDivY5 = appHeight * 11.5 / paperHeight;
-  float MusicbuttonDivWidth5 = appWidth * 1 / paperWidth;
-  float MusicbuttonDivHeight5 = appHeight * 0.8 / paperHeight;
+  MusicbuttonDivX5 = appWidth  * 5.5 / paperWidth;
+  MusicbuttonDivY5 = appHeight * 11.5 / paperHeight;
+  MusicbuttonDivWidth5 = appWidth * 1 / paperWidth;
+  MusicbuttonDivHeight5 = appHeight * 0.8 / paperHeight;
 
 
   //rect( DivX, DivY, DivWidth, DivHeight);
@@ -84,55 +94,55 @@ void setup() {
    */
   //
 
-  float playSymbol1DivX1 = MusicbuttonDivX1 + MusicbuttonDivWidth1*1/4;
-  float playSymbol1DivY2 = MusicbuttonDivY1 +  MusicbuttonDivHeight1*1/4;
-  float playSymbol1DivX3 = MusicbuttonDivX1 + MusicbuttonDivWidth1*3/4;
-  float playSymbol1DivY4 = MusicbuttonDivY1 +  MusicbuttonDivHeight1* 1/2;
-  float playSymbol1DivX5 = MusicbuttonDivX1 + MusicbuttonDivWidth1* 1/4;
-  float playSymbol1DivY6 = MusicbuttonDivY1 + MusicbuttonDivHeight1*3/4;
+  playsymbol1DivX1 = MusicbuttonDivX1 + MusicbuttonDivWidth1*1/4;
+  playsymbol1DivY2 = MusicbuttonDivY1 +  MusicbuttonDivHeight1*1/4;
+  playsymbol1DivX3 = MusicbuttonDivX1 + MusicbuttonDivWidth1*3/4;
+  playsymbol1DivY4 = MusicbuttonDivY1 +  MusicbuttonDivHeight1* 1/2;
+  playsymbol1DivX5 = MusicbuttonDivX1 + MusicbuttonDivWidth1* 1/4;
+  playsymbol1DivY6 = MusicbuttonDivY1 + MusicbuttonDivHeight1*3/4;
 
-  float startsymbol2DivX1 = MusicbuttonDivX2 + MusicbuttonDivWidth2 * 1/4;
-  float startsymbol2DivY2 = MusicbuttonDivY2 + MusicbuttonDivHeight2 * 1/4;
-  float startsymbol2DivWidth3 = MusicbuttonDivWidth2 * 1/2;
-  float startsymbol2DivHeight4 = MusicbuttonDivHeight2 * 1/2;
-
-
+  startsymbol2DivX1 = MusicbuttonDivX2 + MusicbuttonDivWidth2 * 1/4;
+  startsymbol2DivY2 = MusicbuttonDivY2 + MusicbuttonDivHeight2 * 1/4;
+  startsymbol2DivWidth3 = MusicbuttonDivWidth2 * 1/2;
+  startsymbol2DivHeight4 = MusicbuttonDivHeight2 * 1/2;
 
 
 
-  float stopsymbol3DivX1 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/6 ;
-  float stopsymbol3DivY2 = MusicbuttonDivY3+ MusicbuttonDivHeight3*1/6 ;
-  float stopsymbol3DivX3 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/2;
-  float stopsymbol3DivY4 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 1/2;
-  float stopsymbol3DivX5 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/6;
-  float stopsymbol3DivY6 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 5/6;
-
-  float stopsymbol6DivX1 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/2 ;
-  float stopsymbol6DivY2 = MusicbuttonDivY3 + MusicbuttonDivHeight3 *1/6 ;
-  float stopsymbol6DivX3 = MusicbuttonDivX3 + MusicbuttonDivWidth3 * 5/6;
-  float stopsymbol6DivY4 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 1/2;
-  float stopsymbol6DivX5 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/2;
-  float stopsymbol6DivY6 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 5/6;
 
 
+  Nextsymbol3DivX1 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/6 ;
+  Nextsymbol3DivY2 = MusicbuttonDivY3+ MusicbuttonDivHeight3*1/6 ;
+  Nextsymbol3DivX3 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/2;
+  Nextsymbol3DivY4 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 1/2;
+  Nextsymbol3DivX5 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/6;
+  Nextsymbol3DivY6 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 5/6;
 
-  float mutesymbol4DivX1 = MusicbuttonDivX4+MusicbuttonDivWidth4 * 1/2 ;
-  float mutesymbol4DivY2 = MusicbuttonDivY4 + MusicbuttonDivHeight4 * 1/2 ;
-  float mutesymbol4DivWidth3 = MusicbuttonDivWidth4   ;
-  float mutesymbol4DivHeight4 = MusicbuttonDivHeight4;
+  Nextsymbol6DivX1 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/2 ;
+  Nextsymbol6DivY2 = MusicbuttonDivY3 + MusicbuttonDivHeight3 *1/6 ;
+  Nextsymbol6DivX3 = MusicbuttonDivX3 + MusicbuttonDivWidth3 * 5/6;
+  Nextsymbol6DivY4 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 1/2;
+  Nextsymbol6DivX5 = MusicbuttonDivX3 + MusicbuttonDivWidth3* 1/2;
+  Nextsymbol6DivY6 = MusicbuttonDivY3 + MusicbuttonDivHeight3* 5/6;
 
 
-  float recordsymbol5DivX1 = MusicbuttonDivX5 + MusicbuttonDivWidth5* 1/2;
-  float recordsymbol5DivY2 = MusicbuttonDivY5 + MusicbuttonDivHeight5 * 1/2;
-  float recordsymbol5DivWidth3 = MusicbuttonDivWidth5 /2  ;
-  float recordsymbol5DivHeight4 = MusicbuttonDivHeight5 /2  ;
+
+  mutesymbol4DivX1 = MusicbuttonDivX4+MusicbuttonDivWidth4 * 1/2 ;
+  mutesymbol4DivY2 = MusicbuttonDivY4 + MusicbuttonDivHeight4 * 1/2 ;
+  mutesymbol4DivWidth3 = MusicbuttonDivWidth4   ;
+  mutesymbol4DivHeight4 = MusicbuttonDivHeight4;
+
+
+  recordsymbol5DivX1 = MusicbuttonDivX5 + MusicbuttonDivWidth5* 1/2;
+  recordsymbol5DivY2 = MusicbuttonDivY5 + MusicbuttonDivHeight5 * 1/2;
+  recordsymbol5DivWidth3 = MusicbuttonDivWidth5 /2  ;
+  recordsymbol5DivHeight4 = MusicbuttonDivHeight5 /2  ;
 
   rect(MusicbuttonDivX1, MusicbuttonDivY2, MusicbuttonDivWidth3, MusicbuttonDivHeight4);
-  triangle(playSymbol1DivX1, playSymbol1DivY2, playSymbol1DivX3, playSymbol1DivY4, playSymbol1DivX5, playSymbol1DivY6);
+  triangle(playsymbol1DivX1, playsymbol1DivY2, playsymbol1DivX3, playsymbol1DivY4, playsymbol1DivX5, playsymbol1DivY6);
   rect( startsymbol2DivX1, startsymbol2DivY2, startsymbol2DivWidth3, startsymbol2DivHeight4 );
 
-  triangle(stopsymbol3DivX1, stopsymbol3DivY2, stopsymbol3DivX3, stopsymbol3DivY4, stopsymbol3DivX5, stopsymbol3DivY6);
-  triangle(stopsymbol6DivX1, stopsymbol6DivY2, stopsymbol6DivX3, stopsymbol6DivY4, stopsymbol6DivX5, stopsymbol6DivY6);
+  triangle(Nextsymbol3DivX1, Nextsymbol3DivY2, Nextsymbol3DivX3, Nextsymbol3DivY4, Nextsymbol3DivX5, Nextsymbol3DivY6);
+  triangle(Nextsymbol6DivX1, Nextsymbol6DivY2, Nextsymbol6DivX3, Nextsymbol6DivY4, Nextsymbol6DivX5, Nextsymbol6DivY6);
 
   ellipse( mutesymbol4DivX1, mutesymbol4DivY2, mutesymbol4DivWidth3, mutesymbol4DivHeight4);
   ellipse( recordsymbol5DivX1, recordsymbol5DivY2, recordsymbol5DivWidth3, recordsymbol5DivHeight4);
@@ -340,9 +350,31 @@ void draw() {
 }//End Draw
 //
 void mousePressed() {
-  if ( mouseX>playDivX && mouseX<playDivX+playDivWidth && mouseY>playDivY && mouseY<playDivY+playDivHeight ) {
+  if ( mouseX>MusicbuttonDivX1 && mouseX<MusicbuttonDivX1+MusicbuttonDivWidth1 && mouseY>MusicbuttonDivY1 && mouseY<MusicbuttonDivY1+MusicbuttonDivHeight1 ) {
+    text ("play has been clicked", 750, 200, 100);
+    //playList[currentSong].play();
+    //play
   }
-}//End mouse Pressed
+
+  if ( mouseX>MusicbuttonDivX2 && mouseX<MusicbuttonDivX2+MusicbuttonDivWidth2 && mouseY>MusicbuttonDivY2 && mouseY<MusicbuttonDivY2+MusicbuttonDivHeight2 ) {
+    text ("stop has been clicked", 750, 300, 100);
+    //stop  }
+  }
+
+  if ( mouseX>MusicbuttonDivX3 && mouseX<MusicbuttonDivX3+MusicbuttonDivWidth3 && mouseY>MusicbuttonDivY3 && mouseY<MusicbuttonDivY3+MusicbuttonDivHeight3 ) {
+    text ("next has been clicked", 750, 400, 100);
+    //next
+  }
+  if ( mouseX>MusicbuttonDivX4 && mouseX<MusicbuttonDivX4+MusicbuttonDivWidth4 && mouseY>MusicbuttonDivY4 && mouseY<MusicbuttonDivY4+MusicbuttonDivHeight4 ) {
+    text ("mute has been clicked", 750, 500, 100);
+    //mute
+  }
+  if ( mouseX>MusicbuttonDivX5 && mouseX<MusicbuttonDivX5+MusicbuttonDivWidth5 && mouseY>MusicbuttonDivY5 && mouseY<MusicbuttonDivY5+MusicbuttonDivHeight5 ) {
+    text ("record has been clicked", 750, 600, 100);
+    //stop when pressed again
+  }
+}
+//End mouse Pressed
 //
 void keyPressed() {
 }//End key Pressed
