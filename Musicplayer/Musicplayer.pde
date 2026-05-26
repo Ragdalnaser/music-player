@@ -18,7 +18,7 @@ float startsymbol2DivX1, startsymbol2DivY2, startsymbol2DivWidth3, startsymbol2D
 float Nextsymbol3DivX1, Nextsymbol3DivY2, Nextsymbol3DivX3, Nextsymbol3DivY4, Nextsymbol3DivX5, Nextsymbol3DivY6;
 float Nextsymbol6DivX1, Nextsymbol6DivY2, Nextsymbol6DivX3, Nextsymbol6DivY4, Nextsymbol6DivX5, Nextsymbol6DivY6;
 float mutesymbol4DivX1, mutesymbol4DivY2, mutesymbol4DivWidth3, mutesymbol4DivHeight4;
-float recordsymbol5DivX1, recordsymbol5DivY2, recordsymbol5DivWidth3, recordsymbol5DivHeight4;
+float pausesymbol5DivX1, pausesymbol5DivY1, pausesymbol5DivX2, pausesymbol5DivY2, pausesymbol5DivWidth1, pausesymbol5DivHeight1, pausesymbol5DivWidth2, pausesymbol5DivHeight2;
 Float MusicbuttonDivX1, MusicbuttonDivY1, MusicbuttonDivWidth1, MusicbuttonDivHeight1;
 float MusicbuttonDivX2, MusicbuttonDivY2, MusicbuttonDivWidth2, MusicbuttonDivHeight2;
 float MusicbuttonDivX3, MusicbuttonDivY3, MusicbuttonDivWidth3, MusicbuttonDivHeight3;
@@ -132,10 +132,14 @@ void setup() {
   mutesymbol4DivHeight4 = MusicbuttonDivHeight4;
 
 
-  recordsymbol5DivX1 = MusicbuttonDivX5 + MusicbuttonDivWidth5* 1/2;
-  recordsymbol5DivY2 = MusicbuttonDivY5 + MusicbuttonDivHeight5 * 1/2;
-  recordsymbol5DivWidth3 = MusicbuttonDivWidth5 /2  ;
-  recordsymbol5DivHeight4 = MusicbuttonDivHeight5 /2  ;
+  pausesymbol5DivX1 = MusicbuttonDivX5 + MusicbuttonDivWidth5* 1/8;
+  pausesymbol5DivY1 = MusicbuttonDivY5 + MusicbuttonDivHeight5 * 1/4;
+  pausesymbol5DivWidth1 = MusicbuttonDivWidth5 /8  ;
+  pausesymbol5DivHeight1 = MusicbuttonDivHeight5 /2  ;
+  pausesymbol5DivX2 = MusicbuttonDivX5 + MusicbuttonDivWidth5* 6/8;
+  pausesymbol5DivY2 = MusicbuttonDivY5 + MusicbuttonDivHeight5 * 1/4;
+  pausesymbol5DivWidth2 =  MusicbuttonDivWidth5 /8;
+  pausesymbol5DivHeight2 = MusicbuttonDivHeight5 /2;
 
   rect(MusicbuttonDivX1, MusicbuttonDivY2, MusicbuttonDivWidth3, MusicbuttonDivHeight4);
   triangle(playsymbol1DivX1, playsymbol1DivY2, playsymbol1DivX3, playsymbol1DivY4, playsymbol1DivX5, playsymbol1DivY6);
@@ -145,8 +149,9 @@ void setup() {
   triangle(Nextsymbol6DivX1, Nextsymbol6DivY2, Nextsymbol6DivX3, Nextsymbol6DivY4, Nextsymbol6DivX5, Nextsymbol6DivY6);
 
   ellipse( mutesymbol4DivX1, mutesymbol4DivY2, mutesymbol4DivWidth3, mutesymbol4DivHeight4);
-  ellipse( recordsymbol5DivX1, recordsymbol5DivY2, recordsymbol5DivWidth3, recordsymbol5DivHeight4);
 
+rect(pausesymbol5DivX1, pausesymbol5DivY1, pausesymbol5DivWidth1, pausesymbol5DivHeight1);
+rect(pausesymbol5DivX2, pausesymbol5DivY1, pausesymbol5DivWidth1, pausesymbol5DivHeight1);
 
   /* Text, Simple ... Hardcoded;
    */
@@ -370,8 +375,8 @@ void mousePressed() {
     //mute
   }
   if ( mouseX>MusicbuttonDivX5 && mouseX<MusicbuttonDivX5+MusicbuttonDivWidth5 && mouseY>MusicbuttonDivY5 && mouseY<MusicbuttonDivY5+MusicbuttonDivHeight5 ) {
-    text ("record has been clicked", 750, 600, 100);
-    //stop when pressed again
+    text ("Pause has been clicked", 750, 600, 100);
+    // pause 
   }
 }
 //End mouse Pressed
