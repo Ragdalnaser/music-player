@@ -48,7 +48,20 @@ void setup() {
   float messageDIV_Y = appHeight*4/20;
   float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
   float messageDIV_Height = appHeight*9/20;
-
+  // DIVs
+  rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+  rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
+  rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
+  
+  //Music Loading - Structured Review
+  minim = new Minim(this); //Mandatory;
+  String upArrow= "..";
+  String open = "/";
+  String musicFolder = "Music"; //Developer Specific
+  String SoundEffectFolder = "SoundEffect"; //Developer Specific
+  String dependenciesFolder = "dependencies"; //Developer Specific
+  String SoundEffect1 = "Spring_Attic_Door";
+  String fileExtension_mp3 = ".mp3";
 
 
   /*   Fonts from OS
@@ -71,16 +84,7 @@ void setup() {
   String Segoe_Print = "Segoe Print"; //Spelling of the Font Matters, see PFont.list() v Create Font above
   font = createFont(Segoe_Print, fontSize1);
   //
-  //Music Loading - Structured Review
-  minim = new Minim(this); //Mandatory;
-  String upArrow= "..";
-  String open = "/";
-  String musicFolder = "Music"; //Developer Specific
-  String SoundEffectFolder = "SoundEffect"; //Developer Specific
-  String dependenciesFolder = "dependencies"; //Developer Specific
-  String SoundEffect1 = "Spring_Attic_Door";
-  String fileExtension_mp3 = ".mp3";
-  //
+
   /* Alternate Song Name Text
    String songName1 = "Newsroom";
    String songName2 = "Start_Your_Engines";
@@ -89,7 +93,7 @@ void setup() {
   String[] songName = new String[numberOfSongs];
   songName[currentSong] = "Ghost Walk" ;
   currentSong++;
-  songName[currentSong]="Newsroom";
+  songName[currentSong]= "Newsroom";
   currentSong++;
   songName[currentSong]="Start_Your_Engines";
   currentSong=0;
