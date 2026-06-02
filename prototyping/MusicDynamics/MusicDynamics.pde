@@ -17,6 +17,10 @@ int currentSong = numberOfSongs - numberOfSongs;// ZEERO, Math Property
 
 //
 float songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight;
+float QuickbuttondivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight;
+float  messageDIV_X,ssageDIV_Y,messageDIV_Width,messageDIV_Height;
+
+
 color RedInk, resetInk;
 float constantDecrease;
 int iWhile;
@@ -36,18 +40,18 @@ void setup() {
   int numberOfButtons = 5; //Half a button on either side as space, Center Button is Play
   int widthOfButton = appWidth/numberOfButtons;
   int beginningButtonSpace = widthOfButton;
-  float songTitleDivX= appWidth * 1.5 / 11;
-  float songTitleDivY= appHeight * 1.5 / 13;
-  float songTitleDivWidth = appWidth * 3 / 11 ;
-  float songTitleDivHeight = appHeight * 1 / 13 ;
-  float QuickbuttonDivX = appWidth * 0.0  / 11 ;
-  float QuickbuttonDivY = appHeight  * 0.0 / 13 ;
-  float QuickbuttonDivWidth = appWidth  * 0.5  / 11 ;
-  float QuickbuttonDivHeight = appHeight * 0.4 / 13;
-  float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
-  float messageDIV_Y = appHeight*4/20;
-  float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
-  float messageDIV_Height = appHeight*9/20;
+  songTitleDivX= appWidth * 1.5 / 11;
+   songTitleDivY= appHeight * 1.5 / 13;
+   songTitleDivWidth = appWidth * 3 / 11 ;
+   songTitleDivHeight = appHeight * 1 / 13 ;
+   QuickbuttonDivX = appWidth * 0.0  / 11 ;
+   QuickbuttonDivY = appHeight  * 0.0 / 13 ;
+   QuickbuttonDivWidth = appWidth  * 0.5  / 11 ;
+   QuickbuttonDivHeight = appHeight * 0.4 / 13;
+   messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
+   messageDIV_Y = appHeight*4/20;
+   messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
+   messageDIV_Height = appHeight*9/20;
   
   // DIVs
   //rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
@@ -80,7 +84,7 @@ void setup() {
   //rect(height) is biggest font is word is the smallest
   float fontSize1 = songTitleDivHeight * 0.9; //1:1 Font Height to rectHeight
   //float fontSize2 = messageDIV_Height;
-  //float fontSize3 = QuickbuttonDivHeight;
+  float fontSize3 = QuickbuttonDivHeight*0.9;
   //PFont font; //Font Varaible Name, able to have more than one Font
   String Segoe_Print = "Segoe Print"; //Spelling of the Font Matters, see PFont.list() v Create Font above
   font = createFont(Segoe_Print, fontSize1);
@@ -128,9 +132,9 @@ void setup() {
   }
   //
   // DIVs
-  //rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-  //rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
-  //rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
+  rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+  rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
+  rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
   //
   // Drawing Text
   RedInk = #E82A2A; // AP Minilesson  in bit , 8-bit or byte ( gray scale 255
@@ -182,8 +186,10 @@ void draw() {
    text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
    fill(#FFFFFF);// resetInk
    */
-   text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY);
+   fill(RedInk);
+   text( playListMetaData[currentSong].title(), QuickbuttonDivX, songTitleDivY);
    println(currentSong);
+   fill(resetInk);
 }//End Draw
 //
 void mousePressed() {
