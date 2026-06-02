@@ -105,7 +105,7 @@ while (textWidth(Title) > messageDIV_Width) {
     println("Infninte WHILE Loop");
     exit();
   }
-  fontSize2 *= constantDecrease;
+  fontSize2 *= constantDecrease;   
   textFont(font, fontSize2);
 }
 text( Title, messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
