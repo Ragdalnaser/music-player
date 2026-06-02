@@ -48,11 +48,12 @@ void setup() {
   float messageDIV_Y = appHeight*4/20;
   float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
   float messageDIV_Height = appHeight*9/20;
-  // DIVs
-  rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-  rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
-  rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
   
+  // DIVs
+  //rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+  //rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
+  //rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
+
   //Music Loading - Structured Review
   minim = new Minim(this); //Mandatory;
   String upArrow= "..";
@@ -127,17 +128,17 @@ void setup() {
   }
   //
   // DIVs
-  rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-  rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
-  rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
+  //rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+  //rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
+  //rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
   //
   // Drawing Text
   RedInk = #E82A2A; // AP Minilesson  in bit , 8-bit or byte ( gray scale 255
-  color whiteInk=   #FFFFFF; // grey scale is 255
+  color whiteInk = #FFFFFF; // grey scale is 255
   fill(RedInk);// Ink  Hexidecimal copied from the color selector
   // Grey scale 0-255
   textFont(font, fontSize1);
-  textAlign( LEFT, CENTER);// Align, X&Y, See processing. org / reference
+  textAlign( LEFT, TOP);// Align, X&Y, See processing. org / reference
   // Values:[ LEFT|CENTRE|Right]& [Top|CENTER| BOTTOM| BASELINE];
 
   // Procedure Passing RECT(#2) && fontSize(RECT#)
@@ -154,12 +155,15 @@ void setup() {
     fontSize1 *= constantDecrease;
     textFont(font, fontSize1);
   }
-  text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+  textFont(font, fontSize1);
+  fill(RedInk);
+  text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY); //, songTitleDivWidth, songTitleDivHeight );
   fill(resetInk);
 
- 
-  text( x, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-  text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+  println( fontSize1, songTitleDivHeight, RedInk, playListMetaData[currentSong].title() );
+
+  //text( x, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+  //text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
   fill(resetInk);
   //
   //playList[currentSong].play();
@@ -178,6 +182,8 @@ void draw() {
    text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
    fill(#FFFFFF);// resetInk
    */
+   text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY);
+   println(currentSong);
 }//End Draw
 //
 void mousePressed() {
