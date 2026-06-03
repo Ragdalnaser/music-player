@@ -175,18 +175,21 @@ rect(pausesymbol5DivX2, pausesymbol5DivY1, pausesymbol5DivWidth1, pausesymbol5Di
   float QuickbuttonDivY2 = appHeight  * 0.0 / 13 ;
   float QuickbuttonDivWidth3 = appWidth  * 0.5  / 11 ;
   float QuickbuttonDivHeight4 = appHeight * 0.4 / 12;
-  float messageDIV_X = appWidth*5/8 + beginningButtonSpace*13/16;
-  float messageDIV_Y = songTitleDivY;
-  float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
-  float messageDIV_Height = appHeight*9/20;
+  float messageDiV_X = appWidth*5/8 + beginningButtonSpace*13/16;
+  float messageDiV_Y = songTitleDivY;
+  float messageDiV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
+  float messageDiV_Height = appHeight*9/20;
   //
   // DIVs
   rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
   //rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
-  rect( messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
+  rect( messageDiV_X, messageDiV_Y, messageDiV_Width, messageDiV_Height);
   //
   //Strings, Text, Literal
-  String Title = " Thunder";
+  String Title1 = "Ghost Walk";
+  String Title2 = "Newsroom";
+  String Title3 = "start your engine";
+  
   /* Full String longer than Rectangle, "Thunder" I changed 2D Size."
    - divHeight must fit the font size or text is not shown (Advanced, error check includes %-decrease)
    - Fonts includes the in WHITE SPACE around the foreground "coloured ink"
@@ -237,7 +240,7 @@ rect(pausesymbol5DivX2, pausesymbol5DivY1, pausesymbol5DivWidth1, pausesymbol5Di
   float constantDecrease = 0.99;
   int iWhile=0;
   textAlign (LEFT, CENTER);
-  while (textWidth(Title) > songTitleDivWidth) {
+  while (textWidth(Title1) > songTitleDivWidth) {
     //println("While #1"); //Demon Infinite LOOP
     iWhile++;
     if ( iWhile>1000 ) {
@@ -247,10 +250,10 @@ rect(pausesymbol5DivX2, pausesymbol5DivY1, pausesymbol5DivWidth1, pausesymbol5Di
     fontSize1 *= constantDecrease;
     textFont(font, fontSize1);
   }
-  text( Title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+  text( Title1, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
   textFont(font, fontSize2); //must include textSize() before text() & textWidth()
   iWhile=0;
-  while (textWidth(Title) > messageDIV_Width) {
+  while (textWidth(Title2) > messageDiV_Width) {
     //println("While #1"); //Demon Infinite LOOP
     iWhile++;
     if ( iWhile>1000 ) {
@@ -260,10 +263,10 @@ rect(pausesymbol5DivX2, pausesymbol5DivY1, pausesymbol5DivWidth1, pausesymbol5Di
     fontSize2 *= constantDecrease;
     textFont(font, fontSize2);
   }
-  text( Title, messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
+  text( Title2, messageDiV_X, messageDiV_Y, messageDiV_Width, messageDiV_Height );
   textFont(font, fontSize3); //must include textSize() before text() & textWidth()
   iWhile=0;
-  while (textWidth(Title) > QuickbuttonDivWidth) {
+  while (textWidth(Title3) > QuickbuttonDivWidth) {
     //println("While #1"); //Demon Infinite LOOP
     iWhile++;
     if ( iWhile>1000 ) {
@@ -273,7 +276,7 @@ rect(pausesymbol5DivX2, pausesymbol5DivY1, pausesymbol5DivWidth1, pausesymbol5Di
     fontSize3 *= constantDecrease;
     textFont(font, fontSize3);
   }
-  text( Title, QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight );
+  text( Title3, QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight );
   fill(resetInk);
   //
   String upArow = "..";
@@ -356,29 +359,30 @@ void draw() {
 //
 void mousePressed() {
   if ( mouseX>MusicbuttonDivX1 && mouseX<MusicbuttonDivX1+MusicbuttonDivWidth1 && mouseY>MusicbuttonDivY1 && mouseY<MusicbuttonDivY1+MusicbuttonDivHeight1 ) {
-    text ("play has been clicked", 750, 200, 100);
+    text (750, 200, 100);
     //playList[currentSong].play();
     //play
   }
 
   if ( mouseX>MusicbuttonDivX2 && mouseX<MusicbuttonDivX2+MusicbuttonDivWidth2 && mouseY>MusicbuttonDivY2 && mouseY<MusicbuttonDivY2+MusicbuttonDivHeight2 ) {
-    text ("stop has been clicked", 750, 300, 100);
+    text (750, 300, 100);
     //stop  }
   }
 
   if ( mouseX>MusicbuttonDivX3 && mouseX<MusicbuttonDivX3+MusicbuttonDivWidth3 && mouseY>MusicbuttonDivY3 && mouseY<MusicbuttonDivY3+MusicbuttonDivHeight3 ) {
-    text ("next has been clicked", 750, 400, 100);
+    text (750, 400, 100);
     //next
   }
   if ( mouseX>MusicbuttonDivX4 && mouseX<MusicbuttonDivX4+MusicbuttonDivWidth4 && mouseY>MusicbuttonDivY4 && mouseY<MusicbuttonDivY4+MusicbuttonDivHeight4 ) {
-    text ("mute has been clicked", 750, 500, 100);
+    text ( 750, 500, 100);
     //mute
   }
   if ( mouseX>MusicbuttonDivX5 && mouseX<MusicbuttonDivX5+MusicbuttonDivWidth5 && mouseY>MusicbuttonDivY5 && mouseY<MusicbuttonDivY5+MusicbuttonDivHeight5 ) {
-    text ("Pause has been clicked", 750, 600, 100);
+    text (750, 600, 100);
     // pause 
   }
 }
+
 //End mouse Pressed
 //
 void keyPressed() {
