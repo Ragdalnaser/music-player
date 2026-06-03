@@ -1,11 +1,5 @@
-// Library - Minim
-import ddf.minim.*;
-import ddf.minim.analysis.*;
-import ddf.minim.effects.*;
-import ddf.minim.signals.*;
-import ddf.minim.spi.*;
-import ddf.minim.ugens.*;
-//
+
+
 // Global Varibles
 Minim minim;  //initates entire class
 int numberOfSongs = 3; //Best Practcie
@@ -16,46 +10,12 @@ AudioPlayer[] SoundEffect = new AudioPlayer [numberOfSoundEffect];
 int currentSong = numberOfSongs - numberOfSongs;// ZEERO, Math Property
 
 //
-float songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight;
-float QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight;
-float  messageDiV_X, messageDiV_Y, messageDiV_Width, messageDiV_Height;
 
-color RedInk, resetInk;
 float constantDecrease;
 int iWhile;
 float fontSize1, fontSize2, fontSize3;
 PFont font;
 //
-void setup() {
-  //Display
-  fullScreen(); // displayWidth // displayHeight
-  int appWidth = width;// Best Practice
-  int appHeight = height;
-  //
-  float paperWidth = 11.0;
-  float paperHeight = 13.0 ;
-
-  // Population: DIVs
-  int numberOfButtons = 5; //Half a button on either side as space, Center Button is Play
-  int widthOfButton = appWidth/numberOfButtons;
-  int beginningButtonSpace = widthOfButton;
-  songTitleDivX= appWidth * 1.5 / 11;
-  songTitleDivY= appHeight * 1.5 / 13;
-  songTitleDivWidth = appWidth * 3 / 11 ;
-  songTitleDivHeight = appHeight * 1 / 13 ;
-  QuickbuttonDivX = appWidth * 0.0  / 11 ;
-  QuickbuttonDivY = appHeight  * 0.0 / 13 ;
-  QuickbuttonDivWidth = appWidth  * 1.65 / 11 ;
-  QuickbuttonDivHeight = appHeight * 0.4 / 13;
-  messageDiV_X = appWidth*1/2 + beginningButtonSpace*1/2;
-  messageDiV_Y = appHeight*4/20;
-  messageDiV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
-  messageDiV_Height = appHeight*9/20;
-
-  // DIVs
-  //rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-  //rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
-  //rect(messageDiV_X, messageDiV_Y, messageDiV_Width, messageDiV_Height );
 
   //Music Loading - Structured Review
   minim = new Minim(this); //Mandatory;
