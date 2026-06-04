@@ -42,6 +42,18 @@ float MusicbuttonDivX4, MusicbuttonDivY4, MusicbuttonDivWidth4, MusicbuttonDivHe
 float MusicbuttonDivX5, MusicbuttonDivY5, MusicbuttonDivWidth5, MusicbuttonDivHeight5;
 boolean isPaused = false;
 boolean isMuted = false;
+//Global Variables
+int appWidth, appHeight;
+float quitDivX, quitDivY, quitDivWidth, quitDivHeight;
+float playDivX, playDivY, playDivWidth, playDivHeight;
+float playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3;
+//
+Boolean playButton=false;
+//
+color resetBackground, resetInk;
+color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated;
+color quitBackground, quitBackgroundActivated;
+
 void setup() {
 
   //Display
@@ -201,8 +213,9 @@ void setup() {
   //
   // DIVs
   rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-  //rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
+  rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
   rect( messageDiV_X, messageDiV_Y, messageDiV_Width, messageDiV_Height);
+  
   //
   //Strings, Text, Literal
   String Title1 = "Ghost Walk";
@@ -446,6 +459,7 @@ void setup() {
 //println(displayWidth, displayHeight);
 
 void draw() {
+  
 
   if (isPaused == false) {
     playList[currentSong].play();
