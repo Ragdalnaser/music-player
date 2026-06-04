@@ -95,75 +95,8 @@ PFont font;
   rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
   rect(messageDiV_X, messageDiV_Y, messageDiV_Width, messageDiV_Height );
   //
-  // Drawing Text
-  RedInk = #E82A2A; // AP Minilesson  in bit , 8-bit or byte ( gray scale 255
-  color whiteInk = #FFFFFF; // grey scale is 255
-  fill(RedInk);// Ink  Hexidecimal copied from the color selector
-  // Grey scale 0-255
-  textFont(font, fontSize1);
-  textAlign( LEFT, TOP);// Align, X&Y, See processing. org / reference
-  // Values:[ LEFT|CENTRE|Right]& [Top|CENTER| BOTTOM| BASELINE];
-
-  // Procedure Passing RECT(#2) && fontSize(RECT#)
-  float constantDecrease = 0.99;
-  int iWhile=0;
-  textFont(font, fontSize1); //must include textSize() before text() & textWidth()
-  while ( textWidth(playListMetaData[currentSong].title()) > songTitleDivWidth ) {
-    //println("While #1"); //Infinite WHILE Check
-    iWhile++;
-    if ( iWhile>10000 ) { //>1000 means -1 text or i
-      println("Infninte WHILE Loop");
-      exit();
-    }
-    fontSize1 *= constantDecrease;
-    textFont(font, fontSize1);
-  }
-  textFont(font, fontSize1);
-  fill(RedInk);
-  text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY); //, songTitleDivWidth, songTitleDivHeight );
-  fill(resetInk);
-
-  println( fontSize1, songTitleDivHeight, RedInk, playListMetaData[currentSong].title() );
-
-  //text( x, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-  //text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
-  fill(resetInk);
-  //
-  //playList[currentSong].play();
-  // SoundEffect[currentSong].play();
-}
-//
-//End Setup
-//
-void draw() {
-  /*
-  if (!playList[currentSong].isPlaying()) {
-   playList[currentSong].play();
-   }
-   rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-   fill(RedInk);
-   text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
-   fill(#FFFFFF);// resetInk
-   */
-
-
-  textFont(font, fontSize3);
-  fill(RedInk);
-  text( "start your engine", QuickbuttonDivX, QuickbuttonDivY);
-  println(currentSong);
-  fill(resetInk);
-
-textFont(font, fontSize2);
-  fill(RedInk);
-  text( "newsroom", messageDiV_X, messageDiV_Y);
-  println(currentSong);
-}//End Draw
-//
-void mousePressed() {
-}//End Mouse Pressed
-//
-void keyPressed() {
-
+ 
+  
   /* Simple Play
    playList[currentSong].play();
    currentSong++;

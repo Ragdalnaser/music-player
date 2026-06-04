@@ -10,6 +10,22 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
+Minim minim;  //initates entire class
+int numberOfSongs = 3; //Best Practcie
+int numberOfSoundEffect = 1; //
+AudioPlayer[] playList = new AudioPlayer[numberOfSongs];
+AudioMetaData[] playListMetaData = new AudioMetaData[numberOfSongs];
+AudioPlayer[] SoundEffect = new AudioPlayer [numberOfSoundEffect];
+int currentSong = numberOfSongs - numberOfSongs;// ZEERO, Math Property
+
+//
+
+float constantDecrease;
+int iWhile;
+float fontSize1, fontSize2, fontSize3;
+PFont font;
+//
+
 //Glbal Varibles
 //
 float QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight;
@@ -24,7 +40,10 @@ float MusicbuttonDivX2, MusicbuttonDivY2, MusicbuttonDivWidth2, MusicbuttonDivHe
 float MusicbuttonDivX3, MusicbuttonDivY3, MusicbuttonDivWidth3, MusicbuttonDivHeight3;
 float MusicbuttonDivX4, MusicbuttonDivY4, MusicbuttonDivWidth4, MusicbuttonDivHeight4;
 float MusicbuttonDivX5, MusicbuttonDivY5, MusicbuttonDivWidth5, MusicbuttonDivHeight5;
+boolean isPaused = false;
+boolean isMuted = false;
 void setup() {
+
   //Display
   //fullScreen
   int appWidth = width;//displayWidth
@@ -150,8 +169,8 @@ void setup() {
 
   ellipse( mutesymbol4DivX1, mutesymbol4DivY2, mutesymbol4DivWidth3, mutesymbol4DivHeight4);
 
-rect(pausesymbol5DivX1, pausesymbol5DivY1, pausesymbol5DivWidth1, pausesymbol5DivHeight1);
-rect(pausesymbol5DivX2, pausesymbol5DivY1, pausesymbol5DivWidth1, pausesymbol5DivHeight1);
+  rect(pausesymbol5DivX1, pausesymbol5DivY1, pausesymbol5DivWidth1, pausesymbol5DivHeight1);
+  rect(pausesymbol5DivX2, pausesymbol5DivY1, pausesymbol5DivWidth1, pausesymbol5DivHeight1);
 
   /* Text, Simple ... Hardcoded;
    */
@@ -189,7 +208,7 @@ rect(pausesymbol5DivX2, pausesymbol5DivY1, pausesymbol5DivWidth1, pausesymbol5Di
   String Title1 = "Ghost Walk";
   String Title2 = "Newsroom";
   String Title3 = "start your engine";
-  
+
   /* Full String longer than Rectangle, "Thunder" I changed 2D Size."
    - divHeight must fit the font size or text is not shown (Advanced, error check includes %-decrease)
    - Fonts includes the in WHITE SPACE around the foreground "coloured ink"
@@ -244,7 +263,7 @@ rect(pausesymbol5DivX2, pausesymbol5DivY1, pausesymbol5DivWidth1, pausesymbol5Di
     //println("While #1"); //Demon Infinite LOOP
     iWhile++;
     if ( iWhile>1000 ) {
-      println("Infninte WHILE Loop");
+      println("Infininte WHILE Loop");
       exit();
     }
     fontSize1 *= constantDecrease;
@@ -349,43 +368,299 @@ rect(pausesymbol5DivX2, pausesymbol5DivY1, pausesymbol5DivWidth1, pausesymbol5Di
   //image(image1, 0, 0);
   image(image1, imageDivX, imageDivY, imageDivWidthAdjusted2, imageDivHeightAdjusted1);
   //image(image3, 0, 0);
+  //Music Loading - Structured Review
+  minim = new Minim(this); //Mandatory;
+  String upArrow= "..";
+  String musicFolder = "Music"; //Developer Specific
+  String SoundEffectFolder = "SoundEffect"; //Developer Specific
+  String SoundEffect1 = "Spring_Attic_Door";
+  String fileExtension_mp3 = ".mp3";
+
+
+  /*   Fonts from OS
+   println ("start of Cansole");// ERROR: in case CONSOLE Memory not enough;
+   String[] fontlist = PFont.list(); // TO list all fonts to choose, then createFont
+   printArray( fontlist );// For listing all possible fonts to choose , then createfont
+   */
+  //Spelling counts and  and must comapare CONSOLE v Tools / create Font / create  font Spelling
+  //Tools / create Font / find  font / Do Not press "OK", known  conflict  between LoadFont() and createFont()
+
+  // Students enter all text from Case Study
+  String x = "X";
+  //
+  // Fonts from OS
+  //rect(height) is biggest font is word is the smallest
+  fontSize1 = songTitleDivHeight * 0.9; //1:1 Font Height to rectHeight
+  fontSize2 = messageDiV_Height * 0.15;
+  fontSize3 = QuickbuttonDivHeight*0.9;
+  //PFont font; //Font Varaible Name, able to have more than one Font
+  String Segoe_Print = "Segoe Print"; //Spelling of the Font Matters, see PFont.list() v Create Font above
+  font = createFont(Segoe_Print, fontSize1);
+  //
+
+  /* Alternate Song Name Text
+   String songName1 = "Newsroom";
+   String songName2 = "Start_Your_Engines";
+   String songName3 = "Ghost_Walk";
+   */
+  String[] songName = new String[numberOfSongs];
+  songName[currentSong] = "Ghost Walk" ;
+  currentSong++;
+  songName[currentSong]= "Newsroom";
+  currentSong++;
+  songName[currentSong]="Start_Your_Engines";
+  currentSong=0;
+  //
+  //CAUTION: Mistakes Below
+  String musicDirectory=  upArrow + open + upArrow + open + dependenciesFolder + open + musicFolder + open;//Concatenation
+  String SoundEffect1Directory =  upArrow + open + upArrow + open + dependenciesFolder + open + SoundEffectFolder + open;//Concatenation
+  String pathway;
+  for ( int i=0; i<numberOfSongs; i++ ) {
+    //CAUTION: removed ReadMe.txt
+    pathway = musicDirectory + songName[i] + fileExtension_mp3; //TO BE Rewritten and deleted once file is LOADED
+    playList[ i ] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+    playListMetaData[ i ] = playList[ i ].getMetaData();
+    //CAUTION: not currentSong var
+  }
+  for ( int i=0; i<numberOfSongs; i++ ) {
+    if ( playList[i]==null ) { //ERROR, play list is NULL
+      //See FILE or minim.loadFile
+      println("The Play List did not load properly");
+      printArray(playList);
+      exit();
+    }
+  }
+  pathway = SoundEffect1Directory + SoundEffect1 + fileExtension_mp3;
+  SoundEffect[currentSong] = minim.loadFile(pathway);
+
+  if ( SoundEffect[currentSong]== null ) { //ERROR, play list is NULL
+    println("The Sound Effects did not load properly");
+    printArray(SoundEffect);
+    exit();
+  }
+  //
+  // DIVs
 }//End Setup
 //
 //
 //println(displayWidth, displayHeight);
 
 void draw() {
+
+  if (isPaused == false) {
+    playList[currentSong].play();
+  }
+
+  if (isMuted == true) {
+    playList[currentSong].mute();
+  } else {
+    playList[currentSong].unmute();
+  }
 }//End Draw
 //
 void mousePressed() {
   if ( mouseX>MusicbuttonDivX1 && mouseX<MusicbuttonDivX1+MusicbuttonDivWidth1 && mouseY>MusicbuttonDivY1 && mouseY<MusicbuttonDivY1+MusicbuttonDivHeight1 ) {
-    text (750, 200, 100);
-    //playList[currentSong].play();
+    isPaused = false;
+
     //play
   }
 
   if ( mouseX>MusicbuttonDivX2 && mouseX<MusicbuttonDivX2+MusicbuttonDivWidth2 && mouseY>MusicbuttonDivY2 && mouseY<MusicbuttonDivY2+MusicbuttonDivHeight2 ) {
-    text (750, 300, 100);
+    playList[currentSong].pause();
+    playList[currentSong].rewind();
+    isPaused = true;
     //stop  }
   }
 
   if ( mouseX>MusicbuttonDivX3 && mouseX<MusicbuttonDivX3+MusicbuttonDivWidth3 && mouseY>MusicbuttonDivY3 && mouseY<MusicbuttonDivY3+MusicbuttonDivHeight3 ) {
-    text (750, 400, 100);
+    if ( playList[currentSong].isPlaying() ) {
+      playList[currentSong].pause();
+      playList[currentSong].rewind();
+      //
+      if ( currentSong==numberOfSongs-1 ) {
+        currentSong = 0;
+      } else {
+        currentSong++;
+      }
+      playList[currentSong].play();
+    } else {
+      //
+      playList[currentSong].rewind();
+      //
+      if ( currentSong==numberOfSongs-1 ) {
+        currentSong = 0;
+      } else {
+        currentSong++;
+      }
+      // NEXT will not automatically play the song
+      //song[currentSong].play();
+    }
     //next
   }
+
   if ( mouseX>MusicbuttonDivX4 && mouseX<MusicbuttonDivX4+MusicbuttonDivWidth4 && mouseY>MusicbuttonDivY4 && mouseY<MusicbuttonDivY4+MusicbuttonDivHeight4 ) {
-    text ( 750, 500, 100);
+    playList[currentSong].mute();
     //mute
+    if ( isMuted == true ) {
+      isMuted = false;
+    } else {
+      isMuted = true;
+    }
   }
+
   if ( mouseX>MusicbuttonDivX5 && mouseX<MusicbuttonDivX5+MusicbuttonDivWidth5 && mouseY>MusicbuttonDivY5 && mouseY<MusicbuttonDivY5+MusicbuttonDivHeight5 ) {
-    text (750, 600, 100);
-    // pause 
+    playList[currentSong].pause();
+    // pause
+    isPaused = true;
   }
 }
 
-//End mouse Pressed
 //
+
+//End mouse Pressed
 void keyPressed() {
-}//End key Pressed
+  /* Key Board Short Cuts ... learning what the Music Buttons could be
+   Note: CAP Lock with ||
+   if ( key==? || key==? ) ; //'' only
+   -
+   if ( key==CODED || keyCode==SpecialKey ) ; //Special Keys abriviated CAPS
+   -
+   All Music Player Features are built out of these Minim AudioPlayer() functions
+   .isPlaying()
+   .isMuted()
+   .loop(0), parameter is number of iterations after play
+   .loop(), parameter is infinite interations
+   .play(), parameter is built-in skip (milli-seconds or crystal-time)
+   .pause()
+   .rewind()
+   .skip()
+   .unmute()
+   .mute()
+   -
+   Lesson Music Button Features based on single, double, and spamming taps
+   - Play
+   - Pause
+   - Stop
+   - Loop Once
+   - Loop Infinite
+   - Fast Forward
+   - Fast Rewind
+   - Mute
+   - Next Song
+   - Previous Song
+   - Shuffle
+   -
+   - Advanced Buttons & Combinations
+   - Play-Pause-Stop
+   - Auto Play
+   - Random Song
+   */
+  //if ( key=='P' || key=='p' ) playList[currentSong].play(); //Simple Play, no double tap possible
+  //
+  if ( key=='P' || key=='p' ) playList[currentSong].loop(0); //Simple Play, double tap possible
+  /* Note: double tap is automatic rewind, no pause
+   Symbol is two triangles
+   This changes what the button might become after it is pressed
+   */
+  if ( key=='O' || key=='o' ) { // Pause
+    //
+    if ( playList[currentSong].isPlaying() ) {
+      playList[currentSong].pause();
+    } else {
+      playList[currentSong].play();
+    }
+  }
+  //if ( key=='S' || key=='s' ) song[currentSong].pause(); //Simple Stop, no double taps
+  //
+  if ( key=='S' | key=='s' ) {
+    if ( playList[currentSong].isPlaying() ) {
+      playList[currentSong].pause(); //single tap
+    } else {
+      playList[currentSong].rewind(); //double tap
+    }
+  }
+  if ( key=='L' || key=='l' ) playList[currentSong].loop(1); // Loop ONCE: Plays, then plays again, then stops & rewinds
+  if ( key=='K' || key=='k' ) playList[currentSong].loop(); // Loop Infinitely //Parameter: BLANK or -1
+  if ( key=='F' || key=='f' ) playList[currentSong].skip( 10000 ); // Fast Forward, Rewind, & Play Again //Parameter: milliseconds
+  if ( key=='R' || key=='r' ) playList[currentSong].skip( -10000 ); // Fast Reverse & Play //Parameter: negative numbers
+  if ( key=='W' || key=='w' ) { // MUTE
+    //
+    //MUTE Behaviour: stops electricty to speakers, does not stop file
+    //NOTE: MUTE has NO built-in PUASE button, NO built-in rewind button
+    //ERROR: if song near end of file, user will not know song is at the end
+    //Known ERROR: once song plays, MUTE acts like it doesn't work
+    if ( playList[currentSong].isMuted() ) {
+      //ERROR: song might not be playing
+      //CATCH: ask .isPlaying() or !.isPlaying()
+      playList[currentSong].unmute();
+    } else {
+      //Possible ERROR: Might rewind the song
+      playList[currentSong].mute();
+    }
+  }
+  if ( key==CODED || keyCode==ESC ) exit(); // QUIT //UP
+  if ( key=='Q' || key=='q' ) exit(); // QUIT
+  //
+  if ( key=='N' || key=='n' ) { // NEXT //See .txt for starter hint
+    if ( playList[currentSong].isPlaying() ) {
+      playList[currentSong].pause();
+      playList[currentSong].rewind();
+      //
+      if ( currentSong==numberOfSongs-1 ) {
+        currentSong = 0;
+      } else {
+        currentSong++;
+      }
+      playList[currentSong].play();
+    } else {
+      //
+      playList[currentSong].rewind();
+      //
+      if ( currentSong==numberOfSongs-1 ) {
+        currentSong = 0;
+      } else {
+        currentSong++;
+      }
+      // NEXT will not automatically play the song
+      //song[currentSong].play();
+    }
+  }
+  if ( key=='B' || key=='b' ) { // PREVIOUS
+    if ( playList[currentSong].isPlaying() ) {
+      playList[currentSong].pause();
+      playList[currentSong].rewind();
+
+      if ( currentSong==0 ) {
+        currentSong = numberOfSongs-1;
+      } else {
+        currentSong--;
+      }
+
+      playList[currentSong].play();
+    } else {
+
+      playList[currentSong].rewind();
+
+      if ( currentSong==0 ) {
+        currentSong = numberOfSongs-1;
+      } else {
+        currentSong--;
+      }
+    }
+  }
+  //
+  if ( key=='Y' || key=='y' ) currentSong = int(random(numberOfSongs)); //random(0, numberOfSongs)
+  //
+  //if ( key=='S' || key=='s' ) ; // Shuffle - PLAY (Random)
+  //Note: will randomize the currentSong number
+  //Caution: random() is used very often
+  //Question: how does truncating decimals affect returning random() floats
+  /*
+  if ( key=='' || key=='' ) ; // Play-Pause-STOP //Advanced, beyond single buttons
+   - need to have basic GUI complete first
+   */
+  //
+}//End Key Pressed
+//End key Pressed
 //
 //End MAIN Program
