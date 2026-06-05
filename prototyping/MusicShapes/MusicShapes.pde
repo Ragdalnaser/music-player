@@ -58,11 +58,11 @@ float recordsymbolDivWidth = DivWidth /2  ;
 float recordsymbolDivHeight = DivHeight /2  ;
 
 rect(DivX, DivY, DivWidth, DivHeight);
-//triangle( playSymbolDivX1,playSymbolDivY2, playSymbolDivX3, playSymbolDivY4,playSymbolDivX5, playSymbolDivY6 );
-//rect( startsymbolDivX, startsymbolDivY, startsymbolDivWidth, startsymbolDivHeight );
+triangle( playSymbolDivX1,playSymbolDivY2, playSymbolDivX3, playSymbolDivY4,playSymbolDivX5, playSymbolDivY6 );
+rect( startsymbolDivX, startsymbolDivY, startsymbolDivWidth, startsymbolDivHeight );
 
-//triangle(stopsymbolDivX1, stopsymbolDivY2, stopsymbolDivX3, stopsymbolDivY4 ,stopsymbolDivX5, stopsymbolDivY6);
-//triangle(stopsymbol2DivX1, stopsymbol2DivY2, stopsymbol2DivX3, stopsymbol2DivY4 ,stopsymbol2DivX5, stopsymbol2DivY6);
+triangle(stopsymbolDivX1, stopsymbolDivY2, stopsymbolDivX3, stopsymbolDivY4 ,stopsymbolDivX5, stopsymbolDivY6);
+triangle(stopsymbol2DivX1, stopsymbol2DivY2, stopsymbol2DivX3, stopsymbol2DivY4 ,stopsymbol2DivX5, stopsymbol2DivY6);
 
-//ellipse( mutesymbolDivX, mutesymbolDivY, mutesymbolDivWidth, mutesymbolDivHeight);
+ellipse( mutesymbolDivX, mutesymbolDivY, mutesymbolDivWidth, mutesymbolDivHeight);
 //ellipse( recordsymbolDivX, recordsymbolDivY, recordsymbolDivWidth, recordsymbolDivHeight);

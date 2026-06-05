@@ -42,10 +42,9 @@ float MusicbuttonDivX4, MusicbuttonDivY4, MusicbuttonDivWidth4, MusicbuttonDivHe
 float MusicbuttonDivX5, MusicbuttonDivY5, MusicbuttonDivWidth5, MusicbuttonDivHeight5;
 boolean isPaused = false;
 boolean isMuted = false;
-//Global Variables
-int appWidth, appHeight;
-float quitDivX, quitDivY, quitDivWidth, quitDivHeight;
-float playDivX, playDivY, playDivWidth, playDivHeight;
+//Global Variable
+
+float playbuttonDivX, playbuttonDivY, playbuttonDivWidth, playbuttonDivHeight;
 float playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3;
 //
 Boolean playButton=false;
@@ -53,13 +52,31 @@ Boolean playButton=false;
 color resetBackground, resetInk;
 color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated;
 color quitBackground, quitBackgroundActivated;
+//
+
+//
+//
+
 
 void setup() {
+quitDivX = appWidth *  0.0;
+  quitDivY = appHeight *  0.0;
+  quitDivWidth = appWidth *0.5 ;
+  quitDivHeight = appHeight *0.4 ;
+  playDivX = appWidth *1/4 ;
+  playDivY = appHeight *1/4 ;
+  playDivWidth = appWidth * 3/4;
+  playDivHeight = appHeight * 1/2 ;
+  playSymbolX1 = playDivX + playDivWidth * 1/4;
+  playSymbolY1 = playDivY + playDivHeight * 1/4;
+  playSymbolX2 = playSymbolX1 + playDivWidth * 3/4;
+  playSymbolY2 = playDivY + playDivHeight * 1/2;
+  playSymbolX3 = playSymbolX1;
+  playSymbolY3 = playDivY + playDivHeight * 3/
+  
+  
 
-  //Display
-  //fullScreen
-  int appWidth = width;//displayWidth
-  int appHeight = height;//displayHeight
+
   /* DIVs 2D rectangles
    */
   //
@@ -211,11 +228,12 @@ void setup() {
   float messageDiV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
   float messageDiV_Height = appHeight*9/20;
   //
-  // DIVs
-  rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-  rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
-  rect( messageDiV_X, messageDiV_Y, messageDiV_Width, messageDiV_Height);
+  //DIVs
+ rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+//rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
+rect( messageDiV_X, messageDiV_Y, messageDiV_Width, messageDiV_Height);
   
+
   //
   //Strings, Text, Literal
   String Title1 = "Ghost Walk";
@@ -459,6 +477,8 @@ void setup() {
 //println(displayWidth, displayHeight);
 
 void draw() {
+ 
+  //
   
 
   if (isPaused == false) {
@@ -612,7 +632,6 @@ void keyPressed() {
       playList[currentSong].mute();
     }
   }
-  if ( key==CODED || keyCode==ESC ) exit(); // QUIT //UP
   if ( key=='Q' || key=='q' ) exit(); // QUIT
   //
   if ( key=='N' || key=='n' ) { // NEXT //See .txt for starter hint
