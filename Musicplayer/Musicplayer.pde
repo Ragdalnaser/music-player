@@ -59,22 +59,32 @@ color quitBackground, quitBackgroundActivated;
 
 
 void setup() {
-quitDivX = appWidth *  0.0;
-  quitDivY = appHeight *  0.0;
-  quitDivWidth = appWidth *0.5 ;
-  quitDivHeight = appHeight *0.4 ;
-  playDivX = appWidth *1/4 ;
-  playDivY = appHeight *1/4 ;
-  playDivWidth = appWidth * 3/4;
-  playDivHeight = appHeight * 1/2 ;
-  playSymbolX1 = playDivX + playDivWidth * 1/4;
-  playSymbolY1 = playDivY + playDivHeight * 1/4;
-  playSymbolX2 = playSymbolX1 + playDivWidth * 3/4;
-  playSymbolY2 = playDivY + playDivHeight * 1/2;
-  playSymbolX3 = playSymbolX1;
-  playSymbolY3 = playDivY + playDivHeight * 3/
-  
-  
+  //Colour Population
+  color black = 0; //Gray Scale, much smaller color, 256 bits
+  color white = 255; //Gray Scale
+  //CANVAS: default background and ink
+  resetBackground = white;
+  resetInk = white;
+  //Button Colours
+  color red = #FF0000;
+  color purple = #9D03FF; //human name for hexidecimal code
+  color yellow = #FFFF00;
+  color green = #00FF00;
+  color blue = #0000FF;
+  color brown = #795A0B;
+  color orange = #FF9600;
+  color pink = #FF7E7E;
+  color grayScale = 256/2; //Example Gray Scale, small memory
+  color gray = #B9B9B9; //Example Gray Scale, large memory
+  playColourBackground = purple;
+  playColourSymbol = yellow;
+  playColourBackgroundActivated = yellow;
+  playColourSymbolActivated = purple;
+  quitBackground = white;
+  quitBackgroundActivated = red;
+  //
+
+
 
 
   /* DIVs 2D rectangles
@@ -86,6 +96,9 @@ quitDivX = appWidth *  0.0;
   //
   float paperWidth = 11.0;
   float paperHeight = 13.0 ;
+
+  int appWidth = displayWidth;
+  int appHeight = displayHeight;
 
   float songTitleDivX= appWidth * 1.5 / paperWidth ;
   float songTitleDivY= appHeight * 1.5 / paperHeight ;
@@ -127,6 +140,7 @@ quitDivX = appWidth *  0.0;
   MusicbuttonDivY5 = appHeight * 11.5 / paperHeight;
   MusicbuttonDivWidth5 = appWidth * 1 / paperWidth;
   MusicbuttonDivHeight5 = appHeight * 0.8 / paperHeight;
+
 
 
   //rect( DivX, DivY, DivWidth, DivHeight);
@@ -229,10 +243,10 @@ quitDivX = appWidth *  0.0;
   float messageDiV_Height = appHeight*9/20;
   //
   //DIVs
- rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-//rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
-rect( messageDiV_X, messageDiV_Y, messageDiV_Width, messageDiV_Height);
-  
+  rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+  //rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
+  rect( messageDiV_X, messageDiV_Y, messageDiV_Width, messageDiV_Height);
+
 
   //
   //Strings, Text, Literal
@@ -477,9 +491,19 @@ rect( messageDiV_X, messageDiV_Y, messageDiV_Width, messageDiV_Height);
 //println(displayWidth, displayHeight);
 
 void draw() {
- 
+int appHeight = displayHeight;
   //
-  
+  color red = #FF0000;
+  color purple = #9D03FF; //human name for hexidecimal code
+  color yellow = #FFFF00;
+  color green = #00FF00;
+  color blue = #0000FF;
+  color brown = #795A0B;
+  color orange = #FF9600;
+  color pink = #FF7E7E;
+  color white = #FFFFFF;
+  color grayScale = 256/2; //Example Gray Scale, small memory
+  color gray = #B9B9B9; //Example Gray Scale, large memory
 
   if (isPaused == false) {
     playList[currentSong].play();
@@ -490,6 +514,137 @@ void draw() {
   } else {
     playList[currentSong].unmute();
   }
+
+
+
+  if ( mouseX>MusicbuttonDivX1 && mouseX<MusicbuttonDivX1+MusicbuttonDivWidth1 && mouseY>MusicbuttonDivY1 && mouseY<MusicbuttonDivY1+MusicbuttonDivHeight1 ) {
+    fill(blue);
+  } else {
+    fill(white);
+  }
+  rect(MusicbuttonDivX1, MusicbuttonDivY2, MusicbuttonDivWidth3, MusicbuttonDivHeight4);
+  fill (resetInk);
+  
+ 
+  if ( mouseX>MusicbuttonDivX2 && mouseX<MusicbuttonDivX2+MusicbuttonDivWidth2 && mouseY>MusicbuttonDivY2 && mouseY<MusicbuttonDivY2+MusicbuttonDivHeight2 ) {
+    fill(gray);
+  } else {
+    fill(white);
+  }
+  rect(MusicbuttonDivX2, MusicbuttonDivY2, MusicbuttonDivWidth2, MusicbuttonDivHeight2);
+    fill (resetInk);
+
+
+if ( mouseX>MusicbuttonDivX3 && mouseX<MusicbuttonDivX3+MusicbuttonDivWidth3 && mouseY>MusicbuttonDivY3 && mouseY<MusicbuttonDivY3+MusicbuttonDivHeight3 ) {
+    fill(brown);
+  } else {
+    fill(white);
+  }
+  rect(MusicbuttonDivX3, MusicbuttonDivY3, MusicbuttonDivWidth3, MusicbuttonDivHeight3);
+    fill (resetInk);
+
+if ( mouseX>MusicbuttonDivX4 && mouseX<MusicbuttonDivX4+MusicbuttonDivWidth4 && mouseY>MusicbuttonDivY4 && mouseY<MusicbuttonDivY4+MusicbuttonDivHeight4 ) {
+    fill(orange);
+  } else {
+    fill(white);
+  }
+  rect(MusicbuttonDivX4, MusicbuttonDivY4, MusicbuttonDivWidth4, MusicbuttonDivHeight4);
+    fill (resetInk);
+
+
+if ( mouseX>MusicbuttonDivX5 && mouseX<MusicbuttonDivX5+MusicbuttonDivWidth5 && mouseY>MusicbuttonDivY5 && mouseY<MusicbuttonDivY5+MusicbuttonDivHeight5 ) {
+    fill(pink);
+  } else {
+    fill(white);
+  }
+  rect(MusicbuttonDivX5, MusicbuttonDivY5, MusicbuttonDivWidth5, MusicbuttonDivHeight5);
+    fill (resetInk);
+
+
+if ( mouseX>QuickbuttonDivX && mouseX<QuickbuttonDivX+QuickbuttonDivWidth && mouseY>QuickbuttonDivY && mouseY<QuickbuttonDivY+QuickbuttonDivHeight ) {
+    fill(green);
+  } else {
+    fill(white);
+  }
+rect(QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight);
+fill (resetInk);
+
+
+  triangle(playsymbol1DivX1, playsymbol1DivY2, playsymbol1DivX3, playsymbol1DivY4, playsymbol1DivX5, playsymbol1DivY6);
+  rect( startsymbol2DivX1, startsymbol2DivY2, startsymbol2DivWidth3, startsymbol2DivHeight4 );
+
+  triangle(Nextsymbol3DivX1, Nextsymbol3DivY2, Nextsymbol3DivX3, Nextsymbol3DivY4, Nextsymbol3DivX5, Nextsymbol3DivY6);
+  triangle(Nextsymbol6DivX1, Nextsymbol6DivY2, Nextsymbol6DivX3, Nextsymbol6DivY4, Nextsymbol6DivX5, Nextsymbol6DivY6);
+
+  ellipse( mutesymbol4DivX1, mutesymbol4DivY2, mutesymbol4DivWidth3, mutesymbol4DivHeight4);
+
+  rect(pausesymbol5DivX1, pausesymbol5DivY1, pausesymbol5DivWidth1, pausesymbol5DivHeight1);
+  rect(pausesymbol5DivX2, pausesymbol5DivY1, pausesymbol5DivWidth1, pausesymbol5DivHeight1);
+  
+    //Strings, Text, Literal
+  String Title1 = "Ghost Walk";
+  String Title2 = "Newsroom";
+  String Title3 = "start your engine";
+
+  /* Full String longer than Rectangle, "Thunder" I changed 2D Size."
+   - divHeight must fit the font size or text is not shown (Advanced, error check includes %-decrease)
+   - Fonts includes the in WHITE SPACE around the foreground "coloured ink"
+   - divWidth must include the font size
+   - if font is too big, wrap around happens
+   - OR full string is not drawn
+   */
+
+  /* Fonts from OS
+   println ("start of Cansole");// ERROR: in case CONSOLE Memory not enough;
+   String[] fontlist = PFont.List(); // TO list all fonts to choose, then createFont
+   printlnArray( fontlist );// For listing all possible fonts to choose , then createfont
+   //Spelling counts and  and must comapare CONSOLE v Tools / create Font / create  font Spelling
+   //Tools / create Font / find  font / Do Not press "OK", known  conflict  between LoadFont() and createFont()
+   */
+
+
+
+
+  // students  enter all the text from the case study
+  //
+  // Fonts from OS
+  float fontSize3 = appHeight; //Entire Program, Algorithm to have smallest font size
+  //println( fontSize );
+  PFont font; //font Varaible Name, able to have more than one Font
+  String harrington = "Harrington"; //Spelling of the Font Matters, see PFont.list() v Create Font above
+  font = createFont(harrington, fontSize1);
+
+  //println (fontSize);
+
+  //
+  // Drawing Test
+  color RedInk = #E82A2A; // AP Minilesson  in bit , 8-bit or byte ( gray scale 255
+  color whiteInk=   #FFFFFF; // grey scale is 255
+  color  resetInk  = whiteInk;
+  fill(RedInk);// Ink  Hexidecimal copied from the color selector
+  // Grey scale 0-255
+  //text( Title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+  textAlign( CENTER, BASELINE);// Align, X&Y, See processing. org / reference
+  // Values:[ LEFT|CENTRE|Right]& [Top|CENTER| BUTTOM| BASELINE];
+  //Note: drawing text after height dimension solved
+  //WHILE solves length dimension
+  //Additional docing required to adjust consistent text size for meaning in app
+  float constantDecrease = 0.99;
+  int iWhile=0;
+  textAlign (LEFT, CENTER);
+
+  while (textWidth(Title3) > QuickbuttonDivWidth) {
+    //println("While #1"); //Demon Infinite LOOP
+    iWhile++;
+    if ( iWhile>1000 ) {
+      println("Infninte WHILE Loop");
+      exit();
+    }
+    fontSize3 *= constantDecrease;
+    textFont(font, fontSize3);
+  }
+  text( Title3, QuickbuttonDivX, QuickbuttonDivY, QuickbuttonDivWidth, QuickbuttonDivHeight );
+  fill(resetInk);
 }//End Draw
 //
 void mousePressed() {
@@ -546,6 +701,10 @@ void mousePressed() {
     playList[currentSong].pause();
     // pause
     isPaused = true;
+  }
+  
+  if ( mouseX>QuickbuttonDivX && mouseX<QuickbuttonDivX+QuickbuttonDivWidth && mouseY>QuickbuttonDivY && mouseY<QuickbuttonDivY+QuickbuttonDivHeight ) {
+    exit();
   }
 }
 
